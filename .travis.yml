@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - "4"
+  - "0.12"
+install:
+  - npm i -g croc@0.0.19
+script:
+  - croc link
+  - croc pexec "npm install --cache-min 300"
+  - croc pexec "npm run build"
+  - croc pexec "npm test"

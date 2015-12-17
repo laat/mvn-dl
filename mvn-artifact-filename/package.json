@@ -1,0 +1,49 @@
+{
+  "name": "mvn-artifact-filename",
+  "version": "1.0.0",
+  "description": "create filename for maven artifact",
+  "main": "dist/filename.js",
+  "jsnext:main": "lib/filename.js",
+  "scripts": {
+    "build": "babel lib -d dist",
+    "post-build": "onchange 'dist/**.js' 'test/**.js' -- npm test",
+    "watch": "npm run build -- -w & npm run post-build",
+    "test": "standard && mocha --compilers js:babel-register",
+    "prepublish": "npm run build && npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laat/mvn-dl.git"
+  },
+  "keywords": [
+    "maven",
+    "artifact"
+  ],
+  "author": "Sigurd Fosseng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/laat/mvn-dl/issues"
+  },
+  "homepage": "https://github.com/laat/mvn-dl#readme",
+  "devDependencies": {
+    "babel-cli": "^6.3.13",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-register": "^6.3.13",
+    "chai": "*",
+    "mocha": "*",
+    "onchange": "1.x",
+    "standard": "*"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "standard": {
+    "ignore": [
+      "coverage/",
+      "dist/",
+      "node_modules/"
+    ]
+  }
+}

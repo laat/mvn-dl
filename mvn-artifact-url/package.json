@@ -1,6 +1,6 @@
 {
   "name": "mvn-artifact-url",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create url for maven artifacts",
   "main": "dist/artifact-url.js",
   "jsnext:main": "lib/artifact-url.js",

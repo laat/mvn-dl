@@ -1,6 +1,6 @@
 {
   "name": "mvn-artifact-name-parser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Parse java artifact names",
   "main": "dist/parse.js",
   "jsnext:main": "lib/parse.js",

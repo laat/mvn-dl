@@ -5,8 +5,8 @@
 
 [travis-image]: https://img.shields.io/travis/laat/mvn-dl.svg?style=flat
 [travis-url]: https://travis-ci.org/laat/mvn-dl
-[npm-image]: https://img.shields.io/npm/v/mvn-download.svg?style=flat
-[npm-url]: https://npmjs.org/package/mvn-download
+[npm-image]: https://img.shields.io/npm/v/mvn-artifact-download.svg?style=flat
+[npm-url]: https://npmjs.org/package/mvn-artifact-download
 [standard-style-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat
 [standard-style-url]: https://github.com/feross/standard
 

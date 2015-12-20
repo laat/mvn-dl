@@ -1,6 +1,6 @@
 {
   "name": "mvn-dl",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI for downloading maven artifacts",
   "main": "dist/cli.js",
   "jsnext:main": "lib/cli.js",

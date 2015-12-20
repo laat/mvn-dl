@@ -17,6 +17,4 @@ Examples:
 import {docopt} from 'docopt'
 import download from 'mvn-artifact-download'
 const args = docopt(doc, { version: require('../package.json').version })
-console.log(args)
-console.log(args['<destination>'])
 download(args['<artifact>'], args['--destination'], args['--repository'])

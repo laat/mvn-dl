@@ -1,10 +1,10 @@
 {
   "name": "mvn-dl",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "CLI for downloading maven artifacts",
   "main": "dist/cli.js",
   "jsnext:main": "lib/cli.js",
-  "bin": "lib/cli.js",
+  "bin": "dist/cli.js",
   "scripts": {
     "build": "babel lib -d dist",
     "post-build": "onchange 'dist/**.js' 'test/**.js' -- npm test",

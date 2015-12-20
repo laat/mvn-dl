@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const doc = `
 Usage:
  mvn-dl <artifact> [options]

@@ -1,15 +1,13 @@
 {
   "name": "mvn-artifact-download",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Download maven artifacts",
-  "main": "dist/artifact-download.js",
-  "jsnext:main": "lib/artifact-download.js",
+  "main": "built/artifact-download.js",
+  "typings": "built/artifact-download.d.ts",
   "scripts": {
-    "build": "babel lib -d dist",
-    "post-build": "onchange 'dist/**.js' 'test/**.js' -- npm test",
-    "watch": "npm run build -- -w & npm run post-build",
-    "test": "standard && mocha --compilers js:babel-register",
-    "prepublish": "npm run build && npm test"
+    "lint": "tslint -c tslint.json src/*",
+    "test": "npm run lint && mocha --compilers js:babel-register",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -35,18 +33,12 @@
     "mock-fs": "^3.5.0",
     "nock": "^3.5.0",
     "onchange": "1.x",
-    "standard": "*"
+    "tslint": "next",
+    "typescript": "next"
   },
   "babel": {
     "presets": [
       "es2015"
-    ]
-  },
-  "standard": {
-    "ignore": [
-      "coverage/",
-      "dist/",
-      "node_modules/"
     ]
   },
   "dependencies": {

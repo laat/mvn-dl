@@ -1,14 +1,11 @@
 # mvn-artifact-name-parser
 [![travis][travis-image]][travis-url]
 [![npm][npm-image]][npm-url]
-[![js-standard-style][standard-style-image]][standard-style-url]
 
 [travis-image]: https://img.shields.io/travis/laat/mvn-dl.svg?style=flat
 [travis-url]: https://travis-ci.org/laat/mvn-dl
 [npm-image]: https://img.shields.io/npm/v/mvn-artifact-name-parser.svg?style=flat
 [npm-url]: https://npmjs.org/package/mvn-artifact-name-parser
-[standard-style-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat
-[standard-style-url]: https://github.com/feross/standard
 
 ## Install
 
@@ -49,14 +46,6 @@ npm run build
 
 ```js
 npm test
-```
-
-### Watch
-
-To watch for changes, build them and run the tests:
-
-```js
-npm run watch
 ```
 
 ## License

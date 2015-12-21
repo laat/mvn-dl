@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "noImplicitAny": true,
+        "outDir": "built",
+        "rootDir": "src",
+        "sourceMap": true
+    },
+    "package": "package.json",
+    "exclude": [
+        "node_modules"
+    ]
+}

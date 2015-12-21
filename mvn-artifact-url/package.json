@@ -1,15 +1,13 @@
 {
   "name": "mvn-artifact-url",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Create url for maven artifacts",
-  "main": "dist/artifact-url.js",
-  "jsnext:main": "lib/artifact-url.js",
+  "main": "built/artifact-url.js",
+  "typings": "built/artifact-url.d.ts",
   "scripts": {
-    "build": "babel lib -d dist",
-    "post-build": "onchange 'dist/**.js' 'test/**.js' -- npm test",
-    "watch": "npm run build -- -w & npm run post-build",
-    "test": "standard && mocha --compilers js:babel-register",
-    "prepublish": "npm run build && npm test"
+    "lint": "tslint -c tslint.json src/*",
+    "test": "npm run lint && mocha --compilers js:babel-register",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -25,6 +23,9 @@
     "url": "https://github.com/laat/mvn-dl/issues"
   },
   "homepage": "https://github.com/laat/mvn-dl#readme",
+  "dependencies": {
+    "mvn-artifact-filename": "^1.0.0"
+  },
   "devDependencies": {
     "babel-cli": "^6.3.13",
     "babel-preset-es2015": "^6.3.13",
@@ -32,18 +33,12 @@
     "chai": "*",
     "mocha": "*",
     "onchange": "1.x",
-    "standard": "*"
+    "tslint": "next",
+    "typescript": "next"
   },
   "babel": {
     "presets": [
       "es2015"
-    ]
-  },
-  "standard": {
-    "ignore": [
-      "coverage/",
-      "dist/",
-      "node_modules/"
     ]
   }
 }

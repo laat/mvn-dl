@@ -3,4 +3,4 @@
 
 ((js2-mode
   (js2-basic-offset . 2)
-  (flycheck-disabled-checkers javascript-jshint javascript-eslint javascript-gjslint)))
+  (flycheck-disabled-checkers typescript-tide javascript-jshint javascript-eslint javascript-gjslint)))

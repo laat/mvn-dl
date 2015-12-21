@@ -1,15 +1,13 @@
 {
   "name": "mvn-artifact-name-parser",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Parse java artifact names",
-  "main": "dist/parse.js",
-  "jsnext:main": "lib/parse.js",
+  "main": "./built/parse.js",
+  "typings": "./built/parse.d.ts",
   "scripts": {
-    "build": "babel lib -d dist",
-    "post-build": "onchange 'dist/**.js' 'test/**.js' -- npm test",
-    "watch": "npm run build -- -w & npm run post-build",
-    "test": "standard && mocha --compilers js:babel-register",
-    "prepublish": "npm run build && npm test"
+    "lint": "tslint -c tslint.json src/*",
+    "test": "npm run lint && mocha --compilers js:babel-register",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -25,25 +23,19 @@
     "url": "https://github.com/laat/mvn-dl/issues"
   },
   "homepage": "https://github.com/laat/mvn-dl#readme",
-  "devDependencies": {
-    "babel-cli": "^6.3.13",
-    "babel-preset-es2015": "^6.3.13",
-    "babel-register": "^6.3.13",
-    "chai": "*",
-    "mocha": "*",
-    "onchange": "1.x",
-    "standard": "*"
-  },
   "babel": {
     "presets": [
       "es2015"
     ]
   },
-  "standard": {
-    "ignore": [
-      "coverage/",
-      "dist/",
-      "node_modules/"
-    ]
+  "devDependencies": {
+    "babel-register": "^6.3.13",
+    "babel-cli": "^6.3.13",
+    "babel-preset-es2015": "^6.3.13",
+    "chai": "*",
+    "mocha": "*",
+    "onchange": "1.x",
+    "tslint": "^3.2.1",
+    "typescript": "^1.7.5"
   }
 }

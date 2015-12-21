@@ -1,7 +1,8 @@
 /* eslint-env mocha */
-
 import { expect } from 'chai'
 import url from '../'
+
+console.log(url)
 
 let artifact = {
   groupId: 'org.apache.commons',

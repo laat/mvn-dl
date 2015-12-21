@@ -1,15 +1,13 @@
 {
   "name": "mvn-artifact-filename",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "create filename for maven artifact",
-  "main": "dist/filename.js",
-  "jsnext:main": "lib/filename.js",
+  "main": "./built/filename.js",
+  "typings": "./built/filename.d.ts",
   "scripts": {
-    "build": "babel lib -d dist",
-    "post-build": "onchange 'dist/**.js' 'test/**.js' -- npm test",
-    "watch": "npm run build -- -w & npm run post-build",
-    "test": "standard && mocha --compilers js:babel-register",
-    "prepublish": "npm run build && npm test"
+    "lint": "tslint -c tslint.json src/*",
+    "test": "npm run lint && mocha --compilers js:babel-register",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -32,18 +30,12 @@
     "chai": "*",
     "mocha": "*",
     "onchange": "1.x",
-    "standard": "*"
+    "tslint": "next",
+    "typescript": "next"
   },
   "babel": {
     "presets": [
       "es2015"
-    ]
-  },
-  "standard": {
-    "ignore": [
-      "coverage/",
-      "dist/",
-      "node_modules/"
     ]
   }
 }

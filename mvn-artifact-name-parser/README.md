@@ -15,23 +15,27 @@ $ npm install --save mvn-artifact-name-parser
 
 ## Usage
 
-```js
-var parse = require('mvn-artifact-name-parser');
+```javascript
+import parse from 'mvn-artifact-name-parser'
 
 parse('org.apache.commons:commons-lang3:3.4')
-//{
-// groupId: 'org.apache.commons',
-// artifactId: 'commons-lang3',
-// version: '3.4'
-//}
+/*=>
+{
+ groupId: 'org.apache.commons',
+ artifactId: 'commons-lang3',
+ version: '3.4'
+ }
+*/
 
 parse('org.apache.commons:commons-lang3:jar:3.4')
-//{
-// groupId: 'org.apache.commons',
-// artifactId: 'commons-lang3',
-// extension: 'jar',
-// version: '3.4'
-//}
+/*=>
+{
+ groupId: 'org.apache.commons',
+ artifactId: 'commons-lang3',
+ extension: 'jar',
+ version: '3.4'
+ }
+*/
 ```
 
 ## Contributing

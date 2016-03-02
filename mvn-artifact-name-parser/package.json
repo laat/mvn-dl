@@ -1,13 +1,16 @@
 {
   "name": "mvn-artifact-name-parser",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Parse java artifact names",
   "main": "./built/parse.js",
   "typings": "./built/parse.d.ts",
   "scripts": {
     "lint": "tslint -c tslint.json src/*",
-    "test": "npm run lint && mocha --compilers js:babel-register",
-    "build": "tsc"
+    "test:unit": "mocha --compilers js:babel-register --reporter=tap",
+    "test:readme": "readme-assert",
+    "test": "npm run test:unit && npm run test:readme",
+    "build": "tsc",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -29,12 +32,13 @@
     ]
   },
   "devDependencies": {
-    "babel-register": "^6.3.13",
     "babel-cli": "^6.3.13",
     "babel-preset-es2015": "^6.3.13",
+    "babel-register": "^6.3.13",
     "chai": "*",
     "mocha": "*",
     "onchange": "1.x",
+    "readme-assert": "^1.0.1",
     "tslint": "^3.2.1",
     "typescript": "^1.7.5"
   }

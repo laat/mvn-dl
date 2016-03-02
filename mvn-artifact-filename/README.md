@@ -15,16 +15,16 @@ $ npm install --save mvn-artifact-filename
 
 ## Usage
 
-```js
-var createFilename = require('mvn-artifact-filename').default;
+```javascript
+import createFilename from 'mvn-artifact-filename'
 
-var artifact = {
+let artifact = {
   groupId: 'org.apache.commons',
   artifactId: 'commons-lang3',
   version: '3.4'
 }
 createFilename(artifact)
-\\ commons-lang3-3.4.jar
+//=> "commons-lang3-3.4.jar"
 
 artifact = {
   groupId: 'org.apache.commons',
@@ -33,9 +33,9 @@ artifact = {
   version: '3.4'
 }
 createFilename(artifact)
-\\ commons-lang3-3.4.war
+//=> "commons-lang3-3.4.war"
 
-var artifact = {
+artifact = {
   groupId: 'org.apache.commons',
   artifactId: 'commons-lang3',
   extension: 'war',
@@ -43,7 +43,7 @@ var artifact = {
   version: '3.4'
 }
 createFilename(artifact)
-\\ commons-lang3-test-3.4.war
+//=> "commons-lang3-test-3.4.war"
 ```
 
 ## Contributing

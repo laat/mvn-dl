@@ -15,8 +15,9 @@ $ npm install --save mvn-artifact-url
 
 ## Usage
 
-```js
-var url = require('mvn-artifact-url);
+```javascript
+import url from 'mvn-artifact-url';
+
 let artifact = {
   groupId: 'org.apache.commons',
   artifactId: 'commons-lang3',
@@ -24,10 +25,10 @@ let artifact = {
 }
 
 url(artifact)
-// https://repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar
+//=> 'https://repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar'
 
 url(artifact, 'http://localhost/')
-// http://localhost/maven2/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar
+//=> 'http://localhost/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar'
 ```
 
 ## Contributing

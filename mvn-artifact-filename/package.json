@@ -1,13 +1,16 @@
 {
   "name": "mvn-artifact-filename",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "create filename for maven artifact",
   "main": "./built/filename.js",
   "typings": "./built/filename.d.ts",
   "scripts": {
     "lint": "tslint -c tslint.json src/*",
-    "test": "npm run lint && mocha --compilers js:babel-register",
-    "build": "tsc"
+    "test:unit": "mocha --compilers js:babel-register --reporter=tap",
+    "test:readme": "readme-assert",
+    "test": "npm run test:readme && npm run test:unit",
+    "build": "tsc",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -30,6 +33,7 @@
     "chai": "*",
     "mocha": "*",
     "onchange": "1.x",
+    "readme-assert": "^1.0.0",
     "tslint": "next",
     "typescript": "next"
   },

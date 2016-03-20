@@ -18,3 +18,6 @@ import {docopt} from 'docopt'
 import download from 'mvn-artifact-download'
 const args = docopt(doc, { version: require('../package.json').version })
 download(args['<artifact>'], args['--destination'], args['--repository'])
+  .catch((error) => {
+    console.log(`could not download artifact. [Reason=${error}]`)
+  })

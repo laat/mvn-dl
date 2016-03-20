@@ -1,6 +1,6 @@
 {
   "name": "mvn-artifact-download",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Download maven artifacts",
   "main": "built/artifact-download.js",
   "typings": "built/artifact-download.d.ts",
@@ -32,10 +32,10 @@
     "chai-as-promised": "^5.1.0",
     "mocha": "*",
     "mock-fs": "^3.5.0",
-    "nock": "^3.5.0",
-    "onchange": "1.x",
-    "tslint": "next",
-    "typescript": "next"
+    "nock": "^7.2.2",
+    "onchange": "^2.1.2",
+    "tslint": "^3.6.0",
+    "typescript": "^1.8.9"
   },
   "babel": {
     "presets": [

@@ -1,6 +1,6 @@
 {
   "name": "mvn-dl",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "CLI for downloading maven artifacts",
   "main": "dist/cli.js",
   "jsnext:main": "lib/cli.js",
@@ -32,7 +32,7 @@
     "babel-register": "^6.3.13",
     "chai": "*",
     "mocha": "*",
-    "onchange": "1.x",
+    "onchange": "^2.1.2",
     "standard": "*"
   },
   "babel": {

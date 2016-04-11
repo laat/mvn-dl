@@ -1,6 +1,6 @@
 {
   "name": "mvn-artifact-filename",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "create filename for maven artifact",
   "main": "./built/filename.js",
   "typings": "./built/filename.d.ts",
@@ -32,10 +32,10 @@
     "babel-register": "^6.3.13",
     "chai": "*",
     "mocha": "*",
-    "onchange": "1.x",
-    "readme-assert": "^1.0.0",
-    "tslint": "next",
-    "typescript": "next"
+    "onchange": "^2.2.0",
+    "readme-assert": "^2.1.2",
+    "tslint": "^3.7.1",
+    "typescript": "^1.8.9"
   },
   "babel": {
     "presets": [

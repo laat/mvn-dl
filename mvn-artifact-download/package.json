@@ -8,8 +8,7 @@
     "lint": "tslint -c tslint.json src/*",
     "test": "npm run lint && mocha --compilers js:babel-register",
     "build": "tsc --project ./tsconfig.json",
-    "postinstall": "typings -- install",
-    "prepublish": "npm run build"
+    "prepublish": "typings -- install && npm run build"
   },
   "repository": {
     "type": "git",

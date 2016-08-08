@@ -7,7 +7,7 @@ import filename from "mvn-artifact-filename";
 import artifactUrl from "mvn-artifact-url";
 import http = require("http");
 
-export default function download (artifactName: string, destination: string, repository: string) {
+export default function download (artifactName: string, destination?: string, repository?: string) {
   return new Promise(function (resolve, reject) {
     destination = destination || process.cwd();
     const artifact = parseName(artifactName);

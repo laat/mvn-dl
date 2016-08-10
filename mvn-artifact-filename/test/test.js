@@ -12,7 +12,7 @@ describe('mvn-artifact-url', function () {
     }
     expect(filename(artifact)).to.equal('commons-lang3-3.4.jar')
   })
-  it('should give war filename', function () {
+  it('should yield the war filename', function () {
     let artifact = {
       groupId: 'org.apache.commons',
       artifactId: 'commons-lang3',
@@ -21,14 +21,14 @@ describe('mvn-artifact-url', function () {
     }
     expect(filename(artifact)).to.equal('commons-lang3-3.4.war')
   })
-  it('should give war filename with classifier', function () {
+  it('should yield the filename with a classifier', function () {
     let artifact = {
-      groupId: 'org.apache.commons',
-      artifactId: 'commons-lang3',
-      extension: 'war',
+      groupId: 'org.apache.openejb',
+      artifactId: 'openejb-itests-webapp',
+      extension: 'jar',
       classifier: 'test',
-      version: '3.4'
+      version: '3.0-beta-1'
     }
-    expect(filename(artifact)).to.equal('commons-lang3-test-3.4.war')
+    expect(filename(artifact)).to.equal('openejb-itests-webapp-3.0-beta-1-test.jar')
   })
 })

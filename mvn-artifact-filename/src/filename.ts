@@ -13,8 +13,8 @@ export default function filename (artifact: Artifact) {
     if (artifact.classifier) {
         return util.format("%s-%s-%s.%s",
                            artifact.artifactId,
-                           artifact.classifier,
                            artifact.version,
+                           artifact.classifier,
                            extension);
     };
     return util.format("%s-%s.%s",

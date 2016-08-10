@@ -39,11 +39,11 @@ artifact = {
   groupId: 'org.apache.commons',
   artifactId: 'commons-lang3',
   extension: 'war',
-  classifier: 'test',
+  classifier: 'tests',
   version: '3.4'
 }
 createFilename(artifact)
-//=> "commons-lang3-test-3.4.war"
+//=> "commons-lang3-3.4-tests.war"
 ```
 
 ## Contributing

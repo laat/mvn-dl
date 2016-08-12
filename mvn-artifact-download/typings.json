@@ -1,7 +1,5 @@
 {
-  "devDependencies": {
-    "es6-promise": "registry:npm/es6-promise#3.0.0+20160723033700",
-    "form-data": "registry:npm/form-data#1.0.0+20160723033700",
+  "dependencies": {
     "request": "registry:npm/request#2.69.0+20160428223725"
   },
   "globalDevDependencies": {
@@ -9,7 +7,10 @@
     "chai-as-promised": "registry:dt/chai-as-promised#0.0.0+20160423070304",
     "mock-fs": "registry:dt/mock-fs#3.6.0+20160317120654",
     "nock": "registry:dt/nock#0.54.0+20160613160405",
-    "node": "registry:dt/node#6.0.0+20160805072842",
+    "node": "registry:dt/node#6.0.0+20160805072842"
+  },
+  "globalDependencies": {
+    "core-js": "registry:dt/core-js#0.0.0+20160725163759",
     "promises-a-plus": "registry:dt/promises-a-plus#0.0.0+20160317120654"
   }
 }

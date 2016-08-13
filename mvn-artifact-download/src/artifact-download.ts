@@ -1,6 +1,5 @@
 import * as fs from "fs";
 import * as path from "path";
-import { Promise } from "es6-promise";
 import * as request from "request";
 import parseName from "mvn-artifact-name-parser";
 import filename from "mvn-artifact-filename";

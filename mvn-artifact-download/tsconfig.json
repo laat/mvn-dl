@@ -9,6 +9,10 @@
         "sourceMap": true
     },
     "package": "package.json",
+    "files": [
+        "src/artifact-download.ts",
+        "typings/index.d.ts"
+    ],
     "exclude": [
         "node_modules",
         "built"

@@ -4,6 +4,8 @@ export interface Artifact {
     version: string;
     extension?: string;
     classifier?: string;
+    isSnapShot?: boolean;
+    snapShotVersion?: string;
 }
 export default function parseArtifact (name: string): Artifact {
     const parts = name.split(":");
@@ -18,6 +20,10 @@ export default function parseArtifact (name: string): Artifact {
         }
         if (parts.length > 4) {
             artifact.classifier = parts[3];
+        }
+        if(artifact.version.endsWith("-SNAPSHOT")){
+            artifact.isSnapShot = true;
+            artifact.version = artifact.version.substr(0, artifact.version.indexOf("-SNAPSHOT"));
         }
         return artifact;
     }

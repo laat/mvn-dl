@@ -31,4 +31,14 @@ describe('mvn-artifact-url', function () {
     }
     expect(filename(artifact)).to.equal('openejb-itests-webapp-3.0-beta-1-test.jar')
   })
+  it('should yield the filename for the snapshot version', function () {
+    let artifact = {
+      groupId: 'org.apache.openejb',
+      artifactId: 'openejb-itests-webapp',
+      version: '3.0',
+      isSnapShot: true,
+      snapShotVersion: '123'
+    }
+    expect(filename(artifact)).to.equal('openejb-itests-webapp-3.0-123.jar')
+  })
 })

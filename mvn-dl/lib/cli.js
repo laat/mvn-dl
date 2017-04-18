@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import {docopt} from 'docopt'
+import download from 'mvn-artifact-download'
 const doc = `
 Usage:
  mvn-dl <artifact> [options]
@@ -14,8 +16,6 @@ Examples:
  # download jar to dist
  mvn-dl org.apache.commons:commons-lang3:3.4 -d dist
 `
-import {docopt} from 'docopt'
-import download from 'mvn-artifact-download'
 const args = docopt(doc, { version: require('../package.json').version })
 download(args['<artifact>'], args['--destination'], args['--repository'])
   .catch((error) => {

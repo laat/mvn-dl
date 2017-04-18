@@ -34,7 +34,7 @@ url(artifact, 'http://localhost/').then(resolved => {
 })
 
 
-// SNAPSHOT releases
+// SNAPSHOT releases gets resolved.
 url({
       groupId: 'org.apache.commons',
       artifactId: 'commons-lang3',

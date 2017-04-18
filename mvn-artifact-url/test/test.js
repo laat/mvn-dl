@@ -10,56 +10,56 @@ describe('mvn-artifact-url', function () {
 
   describe('of a regular artifact', function () {
 
-let artifact = {
-  groupId: 'org.apache.commons',
-  artifactId: 'commons-lang3',
-  version: '3.4'
-}
+    let artifact = {
+      groupId: 'org.apache.commons',
+      artifactId: 'commons-lang3',
+      version: '3.4'
+    }
 
-it('should contain a path to the artifact', function (done) {
-  let urlPromise = url(artifact, '.');
-  expect(urlPromise).to.eventually.contain('org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar').and.notify(done);
-})
+    it('should contain a path to the artifact', function (done) {
+      let urlPromise = url(artifact, '.');
+      expect(urlPromise).to.eventually.contain('org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar').and.notify(done);
+    })
 
-it('should contain the default base url', function (done) {
-  let urlPromise = url(artifact);
-  expect(urlPromise).to.eventually.contain('https://repo1.maven.org/maven2/').and.notify(done);
-})
+    it('should contain the default base url', function (done) {
+      let urlPromise = url(artifact);
+      expect(urlPromise).to.eventually.contain('https://repo1.maven.org/maven2/').and.notify(done);
+    })
 
-it('can contain a base url other than the default', function (done) {
-  let urlPromise = url(artifact, 'http://localhost/')
-  expect(urlPromise).to.eventually.contain('http://localhost/').and.notify(done)
-})
+    it('can contain a base url other than the default', function (done) {
+      let urlPromise = url(artifact, 'http://localhost/')
+      expect(urlPromise).to.eventually.contain('http://localhost/').and.notify(done)
+    })
   })
 
   describe('of an artifact with a classifier specified', function () {
 
-let artifact = {
-  groupId: 'io.joynr.java.android',
-  artifactId: 'joynr-android',
-  version: '0.19.5',
-  classifier: 'all'
-}
+    let artifact = {
+      groupId: 'io.joynr.java.android',
+      artifactId: 'joynr-android',
+      version: '0.19.5',
+      classifier: 'all'
+    }
 
-it('should contain a path to the artifact', function (done) {
-  let urlPromise = url(artifact, '.');
-  expect(urlPromise).to.eventually.contain('io/joynr/java/android/joynr-android/0.19.5/joynr-android-0.19.5-all.jar').and.notify(done)
-})
+    it('should contain a path to the artifact', function (done) {
+      let urlPromise = url(artifact, '.');
+      expect(urlPromise).to.eventually.contain('io/joynr/java/android/joynr-android/0.19.5/joynr-android-0.19.5-all.jar').and.notify(done)
+    })
   })
 
   describe('of an artifact with packaging specified', function () {
 
-let artifact = {
-  groupId: 'org.apache.commons',
-  artifactId: 'commons-lang3',
-  version: '3.4',
-  extension: 'pom'
-}
+    let artifact = {
+      groupId: 'org.apache.commons',
+      artifactId: 'commons-lang3',
+      version: '3.4',
+      extension: 'pom'
+    }
 
-it('should contain a path to the artifact', function (done) {
-  let urlPromise = url(artifact, '.');
-  expect(urlPromise).to.eventually.contain('org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.pom').and.notify(done);
-})
+    it('should contain a path to the artifact', function (done) {
+      let urlPromise = url(artifact, '.');
+      expect(urlPromise).to.eventually.contain('org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.pom').and.notify(done);
+    })
   })
 
   describe('of an artifact with snapshot version', function () {

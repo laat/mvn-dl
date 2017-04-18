@@ -62,7 +62,7 @@ it('should contain a path to the artifact', function (done) {
 })
   })
 
-  describe.only('of an artifact with snapshot version', function () {
+  describe('of an artifact with snapshot version', function () {
 
     let artifact = {
       groupId: 'org.apache.commons',

@@ -3,7 +3,7 @@
 [![npm][npm-image]][npm-url]
 [![js-standard-style][standard-style-image]][standard-style-url]
 
-[travis-image]: https://img.shields.io/travis/laat/mvn-dl.svg?style=flat
+[travis-image]: https://img.shields.io/travis/laat/mvn-dl.svg?style=flat&branch=master
 [travis-url]: https://travis-ci.org/laat/mvn-dl
 [npm-image]: https://img.shields.io/npm/v/mvn-dl.svg?style=flat
 [npm-url]: https://npmjs.org/package/mvn-dl

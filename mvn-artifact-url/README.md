@@ -24,11 +24,25 @@ let artifact = {
   version: '3.4'
 }
 
-url(artifact)
-//=> 'https://repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar'
+url(artifact).then(resolved => {
+  resolved //=> 'https://repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar'
+})
 
-url(artifact, 'http://localhost/')
-//=> 'http://localhost/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar'
+
+url(artifact, 'http://localhost/').then(resolved => {
+  resolved //=> 'http://localhost/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar'
+})
+
+
+// SNAPSHOT releases
+url({
+      groupId: 'org.apache.commons',
+      artifactId: 'commons-lang3',
+      version: '3.4',
+      isSnapShot: true
+}).then(resolved => {
+  resolved //=> 'https://repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.4-SNAPSHOT/commons-lang3-3.4-1-23.jar'
+})
 ```
 
 ## Contributing

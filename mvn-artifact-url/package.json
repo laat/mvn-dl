@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "tslint -c tslint.json src/*",
     "test:unit": "mocha --compilers js:babel-register --reporter=tap",
-    "test:readme": "readme-assert",
+    "test:readme": "readme-assert --require ./test/readme.setup.js",
     "test": "npm run test:unit && npm run test:readme",
     "build": "tsc",
     "prepublish": "npm run build"

@@ -36,6 +36,17 @@ parse('org.apache.commons:commons-lang3:jar:3.4')
  version: '3.4'
  }
 */
+
+parse('org.apache.commons:commons-lang3:jar:3.4-SNAPSHOT')
+/*=>
+{
+ groupId: 'org.apache.commons',
+ artifactId: 'commons-lang3',
+ extension: 'jar',
+ version: '3.4',
+ isSnapShot: true
+ }
+*/
 ```
 
 ## Contributing

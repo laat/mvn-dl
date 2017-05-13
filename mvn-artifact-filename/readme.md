@@ -44,6 +44,16 @@ artifact = {
 }
 createFilename(artifact)
 //=> "commons-lang3-3.4-tests.war"
+
+artifact = {
+  groupId: 'org.apache.commons',
+  artifactId: 'commons-lang3',
+  version: '3.4',
+  isSnapShot: true,
+  snapShotVersion: '123'
+}
+createFilename(artifact)
+//=> "commons-lang3-3.4-123.jar"
 ```
 
 ## Contributing

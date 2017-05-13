@@ -32,7 +32,7 @@
     "babel-register": "^6.3.13",
     "chai": "*",
     "mocha": "*",
-    "onchange": "^2.1.2",
+    "onchange": "^3.2.1",
     "standard": "*"
   },
   "babel": {

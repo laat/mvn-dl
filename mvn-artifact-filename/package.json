@@ -32,10 +32,10 @@
     "babel-register": "^6.3.13",
     "chai": "*",
     "mocha": "*",
-    "onchange": "^2.2.0",
-    "readme-assert": "^2.1.2",
-    "tslint": "^3.7.1",
-    "typescript": "^1.8.9"
+    "onchange": "^3.2.1",
+    "readme-assert": "^5.0.5",
+    "tslint": "^5.2.0",
+    "typescript": "^2.3.2"
   },
   "babel": {
     "presets": [

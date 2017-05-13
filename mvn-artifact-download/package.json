@@ -1,6 +1,6 @@
 {
   "name": "mvn-artifact-download",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Download maven artifacts",
   "main": "built/artifact-download.js",
   "typings": "built/artifact-download.d.ts",
@@ -44,9 +44,9 @@
     ]
   },
   "dependencies": {
-    "mvn-artifact-name-parser": "~1.0.0",
-    "mvn-artifact-filename": "~1.0.0",
-    "mvn-artifact-url": "~1.0.0",
+    "mvn-artifact-name-parser": "~2.0.0",
+    "mvn-artifact-filename": "~2.0.0",
+    "mvn-artifact-url": "~2.0.0",
     "request": "^2.67.0"
   }
 }

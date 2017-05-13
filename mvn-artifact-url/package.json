@@ -1,6 +1,6 @@
 {
   "name": "mvn-artifact-url",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "description": "Create url for maven artifacts",
   "main": "built/artifact-url.js",
   "typings": "built/artifact-url.d.ts",

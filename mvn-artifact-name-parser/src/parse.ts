@@ -21,7 +21,7 @@ export default function parseArtifact (name: string): Artifact {
         if (parts.length > 4) {
             artifact.classifier = parts[3];
         }
-        if(artifact.version.endsWith("-SNAPSHOT")){
+        if (artifact.version.endsWith("-SNAPSHOT")) {
             artifact.isSnapShot = true;
             artifact.version = artifact.version.substr(0, artifact.version.indexOf("-SNAPSHOT"));
         }

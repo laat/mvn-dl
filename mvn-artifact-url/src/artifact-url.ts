@@ -1,8 +1,8 @@
 import * as path from "path";
 import * as util from "util";
 import filename from "mvn-artifact-filename";
-var parseString = require("xml2js").parseString;
-var request = require("request");
+const parseString = require("xml2js").parseString;
+const request = require("request");
 
 export interface Artifact {
     groupId: string;
@@ -29,11 +29,11 @@ const latestSnapShotVersion = function(artifact: Artifact, basepath: string){
   return new Promise(function(resolve: any, reject: any){
     let metadataUrl = basepath + groupPath(artifact) + "/maven-metadata.xml";
     request(metadataUrl, function(error: any, response: any, body: any){
-      if(response.statusCode != 200){
+      if (response.statusCode !== 200) {
         reject(response.statusCode);
       } else {
         parseString(body, function(err: any, result: any){
-          if(err){
+          if (err) {
             reject(err);
           } else {
             let snapshot = result.metadata.versioning[0].snapshot[0];
@@ -49,7 +49,7 @@ const latestSnapShotVersion = function(artifact: Artifact, basepath: string){
 export default function artifactUrl (artifact: Artifact, basepath: string) {
   return new Promise(function(resolve: any, reject: any){
     let prefix = basepath || "https://repo1.maven.org/maven2/";
-    if(artifact.isSnapShot){
+    if (artifact.isSnapShot) {
       latestSnapShotVersion(artifact, prefix).then(function(version: string){
         artifact.snapShotVersion = version;
         let url = prefix + artifactPath(artifact);

@@ -36,4 +36,4 @@ export default function download (artifactName: string, destination?: string, re
       reject(err);
     });
   });
-};
+}

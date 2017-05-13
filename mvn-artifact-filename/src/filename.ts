@@ -23,7 +23,7 @@ export default function filename (artifact: Artifact) {
                            version,
                            artifact.classifier,
                            extension);
-    };
+    }
     return util.format("%s-%s.%s",
                        artifact.artifactId,
                        version,

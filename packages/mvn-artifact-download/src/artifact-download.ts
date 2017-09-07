@@ -3,7 +3,6 @@ import * as path from 'path';
 import parseName from 'mvn-artifact-name-parser';
 import filename from 'mvn-artifact-filename';
 import artifactUrl from 'mvn-artifact-url';
-import http = require('http');
 import fetch from 'node-fetch';
 
 function pipeToFile(body: NodeJS.ReadableStream, destFile: string) {

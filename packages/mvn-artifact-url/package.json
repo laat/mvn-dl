@@ -1,0 +1,53 @@
+{
+  "name": "mvn-artifact-url",
+  "version": "2.0.1",
+  "description": "Create url for maven artifacts",
+  "main": "lib/artifact-url.js",
+  "typings": "lib/artifact-url.d.ts",
+  "scripts": {
+    "test:unit": "mocha --compilers js:babel-core/register --reporter=tap",
+    "test:readme": "readme-assert --require ./test/readme.setup.js",
+    "test": "npm run test:unit && npm run test:readme",
+    "build": "tsc",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laat/mvn-dl.git"
+  },
+  "keywords": ["maven", "artifact"],
+  "author": "Sigurd Fosseng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/laat/mvn-dl/issues"
+  },
+  "engines": { "node": ">6" },
+  "homepage": "https://github.com/laat/mvn-dl#readme",
+  "dependencies": {
+    "mvn-artifact-filename": "^2.0.0",
+    "node-fetch": "^1.7.2",
+    "xml2js": "^0.4.17"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.27",
+    "@types/node-fetch": "^1.6.7",
+    "@types/xml2js": "^0.4.0",
+    "chai": "*",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "*",
+    "mock-fs": "^4.4.1",
+    "nock": "^9.0.14",
+    "readme-assert": "^5.0.5",
+    "typescript": "^2.5.2"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "exclude": ["transform-regenerator"]
+        }
+      ]
+    ]
+  }
+}

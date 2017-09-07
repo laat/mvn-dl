@@ -1,0 +1,36 @@
+{
+  "name": "mvn-artifact-filename",
+  "version": "2.0.1",
+  "description": "create filename for maven artifact",
+  "main": "./lib/filename.js",
+  "typings": "./lib/filename.d.ts",
+  "scripts": {
+    "test:unit": "mocha --compilers js:babel-register --reporter=tap",
+    "test:readme": "readme-assert",
+    "test": "npm run test:readme && npm run test:unit",
+    "build": "tsc",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laat/mvn-dl.git"
+  },
+  "keywords": ["maven", "artifact"],
+  "author": "Sigurd Fosseng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/laat/mvn-dl/issues"
+  },
+  "engines": { "node": ">6" },
+  "homepage": "https://github.com/laat/mvn-dl#readme",
+  "devDependencies": {
+    "@types/node": "^8.0.27",
+    "chai": "*",
+    "mocha": "*",
+    "readme-assert": "^5.0.5",
+    "typescript": "^2.3.2"
+  },
+  "babel": {
+    "presets": ["env"]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "mvn-dl",
+  "version": "2.0.1",
+  "description": "CLI for downloading maven artifacts",
+  "main": "lib/cli.js",
+  "jsnext:main": "lib/cli.js",
+  "bin": "lib/cli.js",
+  "scripts": {
+    "build": "babel src -d lib",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laat/mvn-dl.git"
+  },
+  "keywords": ["maven", "artifact"],
+  "author": "Sigurd Fosseng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/laat/mvn-dl/issues"
+  },
+  "engines": { "node": ">6" },
+  "homepage": "https://github.com/laat/mvn-dl#readme",
+  "dependencies": {
+    "docopt": "^0.6.2",
+    "mvn-artifact-download": "^2.0.0"
+  },
+  "babel": {
+    "presets": ["env"]
+  }
+}

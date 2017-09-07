@@ -1,10 +1,15 @@
 language: node_js
+git:
+  lfs_skip_smudge: true
+before_install:
+- echo -e "machine github.com\n  login $GITHUB_TOKEN" >> ~/.netrc
+- git lfs pull
+- curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.0.1
+- export PATH=$HOME/.yarn/bin:$PATH
 node_js:
-  - "5"
-install:
-  - npm i -g croc@0.0.19
-script:
-  - croc link
-  - croc pexec "npm install --cache-min 300"
-  - croc pexec "npm run build"
-  - croc pexec "npm test"
+- '8'
+- '7'
+- '6'
+env:
+  global:
+    secure: ThefVLoCrKU3juXDfMp9akVouq/+CfaQ6Y9X9QBhQgk5gM3YCMd9tgLNmnyaduA2R5CjBqeYuC1ufdzdnOgHj5tb1d8/A6hinXz4BG2hD7KEw6fgpfJKd6qMUSgTtFtGnbB6/gf7w7Pzd7rWe4E+ONP+r3RUvMNDKwEYpyEMFkpEf0EphpDH892bq+9Jwa4qWL8sdvKa0CpPZKe99DueKEMjhEDu1vsK3heCkTuMT8tQ3MB0d/C1EgRsMMRuy6IO63dqGgOc2smhHALa8Ow7dh0+/XDcgQPnQylxjm1FGIVpt1JjywsZNtH2jwjbv4bKdDnyt9law6bK/gcpWoOXVSO+9/8H7ePwNsmFqWakom6NzjYOjaG36fuDneH6/AGW4c5Rlukri3VYGZB+DR2UxClJJLqYmkcSHXiH4PXD58tsFq8Bq+bO3u+sfq/unee8t/I8mF4KIkvFWs4YYsVedJkz8N3xJrUKk/5n8zeqVfxvSp0EN89cmv8JBEH/qKLpAa1SQcjTD0QVH/FV4WNxRzr55WVkgx8qiYW8fzMGQ6JARKRHwkhwbk3biGd2o350Oi3NH3b2hnVl3YDXihVo1DuVEhhSxJ8NSYfPfyxV7CXB494wonRMArdb5Qv2eVIa4R0ztvYOocyztZeE28aM32fiRPFf6nupEYrtWrZLAOQ=

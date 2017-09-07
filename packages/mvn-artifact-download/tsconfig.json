@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "module": "commonjs",
+    "target": "es2015",
+    "noImplicitAny": true,
+    "outDir": "lib",
+    "rootDir": "src",
+    "sourceMap": true
+  },
+  "package": "package.json",
+  "files": ["src/artifact-download.ts"],
+  "exclude": ["node_modules", "lib"]
+}

@@ -1,10 +1,6 @@
 language: node_js
+before_install:
+- echo -e "machine github.com\n  login $GITHUB_TOKEN" >> ~/.netrc
+- git lfs pull
 node_js:
-  - "5"
-install:
-  - npm i -g croc@0.0.19
-script:
-  - croc link
-  - croc pexec "npm install --cache-min 300"
-  - croc pexec "npm run build"
-  - croc pexec "npm test"
+  - "8"

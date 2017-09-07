@@ -1,1 +1,2 @@
 * text=auto
+third_party/yarn_mirror/*.tgz filter=lfs diff=lfs merge=lfs -text

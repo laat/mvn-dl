@@ -1,0 +1,42 @@
+{
+  "name": "mvn-artifact-download",
+  "version": "2.0.1",
+  "description": "Download maven artifacts",
+  "main": "lib/artifact-download.js",
+  "typings": "lib/artifact-download.d.ts",
+  "scripts": {
+    "test:unit": "mocha --compilers js:babel-register --reporter=tap",
+    "build": "tsc --project ./tsconfig.json",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laat/mvn-dl.git"
+  },
+  "keywords": ["maven", "artifact"],
+  "author": "Sigurd Fosseng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/laat/mvn-dl/issues"
+  },
+  "homepage": "https://github.com/laat/mvn-dl#readme",
+  "devDependencies": {
+    "@types/node": "^8.0.27",
+    "@types/node-fetch": "^1.6.7",
+    "chai": "*",
+    "chai-as-promised": "^6.0.0",
+    "mocha": "*",
+    "mock-fs": "^4.3.0",
+    "nock": "^9.0.13",
+    "typescript": "^2.3.2"
+  },
+  "dependencies": {
+    "mvn-artifact-filename": "~2.0.0",
+    "mvn-artifact-name-parser": "~2.0.0",
+    "mvn-artifact-url": "~2.0.0",
+    "node-fetch": "^1.7.2"
+  },
+  "babel": {
+    "presets": ["env"]
+  }
+}

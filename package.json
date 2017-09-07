@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "name": "mvn-dl-reop",
+  "version": "1.0.0",
+  "repository": "git@github.com:laat/mvn-dl.git",
+  "author": "Sigurd Fosseng <sigurd@fosseng.net>",
+  "license": "MIT",
+  "scripts": {
+    "test": "lerna run test",
+    "prepare": "lerna bootstrap",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,json,css,ts}": ["prettier --write", "git add"]
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-register": "^6.26.0",
+    "husky": "^0.14.3",
+    "lerna": "^2.1.2",
+    "lint-staged": "^4.1.2",
+    "prettier": "^1.6.1"
+  }
+}

@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/laat/mvn-dl/issues"
   },
-  "engines": { "node": ">8.2" },
+  "engines": { "node": ">6" },
   "homepage": "https://github.com/laat/mvn-dl#readme",
   "devDependencies": {
     "@types/node": "^8.0.27",

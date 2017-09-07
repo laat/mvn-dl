@@ -7,7 +7,7 @@ export interface Artifact {
   isSnapShot?: boolean;
   snapShotVersion?: string;
 }
-export default (name: string): Artifact => {
+export default function parseFileName(name: string): Artifact {
   const parts = name.split(':');
   if (parts.length >= 3) {
     const artifact: Artifact = {
@@ -31,4 +31,4 @@ export default (name: string): Artifact => {
     return artifact;
   }
   throw new Error('not a maven package name. try <group>:<artifact>:<version>');
-};
+}

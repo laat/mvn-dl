@@ -6,8 +6,8 @@ import artifactUrl from 'mvn-artifact-url';
 import http = require('http');
 import fetch from 'node-fetch';
 
-const pipeToFile = (body: NodeJS.ReadableStream, destFile: string) =>
-  new Promise((resolve, reject) => {
+function pipeToFile(body: NodeJS.ReadableStream, destFile: string) {
+  return new Promise((resolve, reject) => {
     const file = fs.createWriteStream(destFile);
     file.on('finish', () => {
       file.close();
@@ -19,6 +19,7 @@ const pipeToFile = (body: NodeJS.ReadableStream, destFile: string) =>
     });
     body.pipe(file);
   });
+}
 
 export default async function download(
   artifactName: string,

@@ -14,17 +14,19 @@ export interface Artifact {
   snapShotVersion?: string;
 }
 
-const groupPath = (artifact: Artifact): string =>
-  [
+function groupPath(artifact: Artifact): string {
+  return [
     artifact.groupId.replace(/\./g, '/'),
     artifact.artifactId,
     artifact.version + (artifact.isSnapShot ? '-SNAPSHOT' : ''),
   ].join('/');
+}
 
-const artifactPath = (artifact: Artifact): string =>
-  path.join(groupPath(artifact), filename(artifact));
+function artifactPath(artifact: Artifact): string {
+  return path.join(groupPath(artifact), filename(artifact));
+}
 
-const latestSnapShotVersion = async (artifact: Artifact, basepath: string) => {
+async function latestSnapShotVersion(artifact: Artifact, basepath: string) {
   const metadataUrl = basepath + groupPath(artifact) + '/maven-metadata.xml';
   const response = await fetch(metadataUrl);
   if (response.status !== 200) {
@@ -37,9 +39,12 @@ const latestSnapShotVersion = async (artifact: Artifact, basepath: string) => {
   const snapshot = xml.metadata.versioning[0].snapshot[0];
   const version = snapshot.timestamp[0] + '-' + snapshot.buildNumber[0];
   return version;
-};
+}
 
-export default async (artifact: Artifact, basepath: string) => {
+export default async function artifactUrl(
+  artifact: Artifact,
+  basepath: string
+) {
   const prefix = basepath || 'https://repo1.maven.org/maven2/';
   if (artifact.isSnapShot) {
     const snapShotVersion = await latestSnapShotVersion(artifact, prefix);
@@ -47,4 +52,4 @@ export default async (artifact: Artifact, basepath: string) => {
   } else {
     return prefix + artifactPath(artifact);
   }
-};
+}

@@ -10,11 +10,13 @@ export interface Artifact {
   snapShotVersion?: string;
 }
 
-const getVersion = (artifact: Artifact): string =>
-  artifact.version +
-  (artifact.isSnapShot ? '-' + artifact.snapShotVersion : '');
+function getVersion(artifact: Artifact): string {
+  const version = artifact.version;
+  const suffix = artifact.isSnapShot ? `-${artifact.snapShotVersion}` : '';
+  return `${version}${suffix}`;
+}
 
-export default (artifact: Artifact) => {
+export default function filename(artifact: Artifact) {
   const extension = artifact.extension || 'jar';
   let version = getVersion(artifact);
 
@@ -28,4 +30,4 @@ export default (artifact: Artifact) => {
     );
   }
   return util.format('%s-%s.%s', artifact.artifactId, version, extension);
-};
+}

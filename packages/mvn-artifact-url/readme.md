@@ -21,42 +21,29 @@ import url from 'mvn-artifact-url';
 let artifact = {
   groupId: 'org.apache.commons',
   artifactId: 'commons-lang3',
-  version: '3.4'
-}
+  version: '3.4',
+};
 
 url(artifact).then(resolved => {
-  resolved //=> 'https://repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar'
-})
-
+  resolved;
+  //=> 'https://repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar'
+});
 
 url(artifact, 'http://localhost/').then(resolved => {
-  resolved //=> 'http://localhost/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar'
-})
-
+  resolved;
+  //=> 'http://localhost/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar'
+});
 
 // SNAPSHOT releases gets resolved.
 url({
-      groupId: 'org.apache.commons',
-      artifactId: 'commons-lang3',
-      version: '3.4',
-      isSnapShot: true
+  groupId: 'org.apache.commons',
+  artifactId: 'commons-lang3',
+  version: '3.4',
+  isSnapShot: true,
 }).then(resolved => {
-  resolved //=> 'https://repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.4-SNAPSHOT/commons-lang3-3.4-1-23.jar'
-})
-```
-
-## Contributing
-
-### Build
-
-```js
-npm run build
-```
-
-### Test
-
-```js
-npm test
+  resolved;
+  //=> 'https://repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.4-SNAPSHOT/commons-lang3-3.4-1-23.jar'
+});
 ```
 
 ## License

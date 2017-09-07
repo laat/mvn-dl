@@ -16,42 +16,36 @@ $ npm install --save mvn-artifact-download
 ## Usage
 
 ```js
-var download = require('mvn-artifact-download');
+import download from 'mvn-artifact-download';
+
 download('org.apache.commons:commons-lang3:3.4')
-.then(function (destinationFile){
-  // success
-  }, function(err){
-  // error
-})
+// Promise that resolves to destination filename
 
 download('org.apache.commons:commons-lang3:3.4', '/path/to/destination/dir')
-.then(function (destinationFile){
-  // success
-  }, function(err){
-  // error
-})
+// Promise that resolves to destination filename
 
 download('org.apache.commons:commons-lang3:3.4', null, 'http://alternative.repo')
-.then(function (destinationFile){
-  // success
-  }, function(err){
-  // error
-})
+// Promise that resolves to destination filename
 ```
 
-## Contributing
+## API
 
-### Build
+### download(artifactName, [destinationFolder], [repository])
 
-```js
-npm run build
-```
+Downloads an artifact from the repository
 
-### Test
+#### artifactName
 
-```js
-npm test
-```
+Type: `string`
+
+#### destinationFolder
+
+Type: `string`
+Default: `process.cwd()`
+
+#### repository
+
+Type: `string`
 
 ## License
 

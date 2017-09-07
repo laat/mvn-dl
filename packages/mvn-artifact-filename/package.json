@@ -1,6 +1,6 @@
 {
   "name": "mvn-artifact-filename",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "create filename for maven artifact",
   "main": "./lib/filename.js",
   "typings": "./lib/filename.d.ts",
@@ -21,7 +21,9 @@
   "bugs": {
     "url": "https://github.com/laat/mvn-dl/issues"
   },
-  "engines": { "node": ">6" },
+  "engines": {
+    "node": ">6"
+  },
   "homepage": "https://github.com/laat/mvn-dl#readme",
   "devDependencies": {
     "@types/node": "^8.0.27",

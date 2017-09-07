@@ -1,6 +1,6 @@
 {
   "name": "mvn-dl",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "CLI for downloading maven artifacts",
   "main": "lib/cli.js",
   "jsnext:main": "lib/cli.js",
@@ -19,11 +19,13 @@
   "bugs": {
     "url": "https://github.com/laat/mvn-dl/issues"
   },
-  "engines": { "node": ">6" },
+  "engines": {
+    "node": ">6"
+  },
   "homepage": "https://github.com/laat/mvn-dl#readme",
   "dependencies": {
     "docopt": "^0.6.2",
-    "mvn-artifact-download": "^2.0.0"
+    "mvn-artifact-download": "^3.0.0"
   },
   "babel": {
     "presets": ["env"]

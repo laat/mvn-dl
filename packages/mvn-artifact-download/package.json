@@ -1,6 +1,6 @@
 {
   "name": "mvn-artifact-download",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "Download maven artifacts",
   "main": "lib/artifact-download.js",
   "typings": "lib/artifact-download.d.ts",
@@ -19,7 +19,9 @@
   "bugs": {
     "url": "https://github.com/laat/mvn-dl/issues"
   },
-  "engines": { "node": ">6" },
+  "engines": {
+    "node": ">6"
+  },
   "homepage": "https://github.com/laat/mvn-dl#readme",
   "devDependencies": {
     "@types/node": "^8.0.27",
@@ -32,9 +34,9 @@
     "typescript": "^2.3.2"
   },
   "dependencies": {
-    "mvn-artifact-filename": "~2.0.0",
-    "mvn-artifact-name-parser": "~2.0.0",
-    "mvn-artifact-url": "~2.0.0",
+    "mvn-artifact-filename": "^3.0.0",
+    "mvn-artifact-name-parser": "^3.0.0",
+    "mvn-artifact-url": "^3.0.0",
     "node-fetch": "^1.7.2"
   },
   "babel": {

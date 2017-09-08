@@ -1,6 +1,6 @@
 {
   "name": "mvn-artifact-url",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Create url for maven artifacts",
   "main": "lib/artifact-url.js",
   "typings": "lib/artifact-url.d.ts",
@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/laat/mvn-dl#readme",
   "dependencies": {
-    "mvn-artifact-filename": "^3.0.0",
+    "mvn-artifact-filename": "^3.0.1",
     "node-fetch": "^1.7.2",
     "xml2js": "^0.4.17"
   },

@@ -10,6 +10,7 @@ before_install:
 install:
 - yarn
 - $(npm bin)/lerna bootstrap
+- $(npm bin)/lerna run build
 node_js:
 - '8'
 - '7'

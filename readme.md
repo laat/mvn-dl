@@ -15,3 +15,10 @@ This is a mono-repo for **mvn-dl**
 * [mvn-artifact-url](./packages/mvn-artifact-url)
 * [mvn-artifact-filename](./packages/mvn-artifact-filename)
 * [mvn-artifact-download](./packages/mvn-artifact-download)
+
+## Development
+
+This repository uses yarn workspaces
+```
+yarn config set workspaces-experimental true
+```

@@ -22,3 +22,10 @@ This repository uses yarn workspaces
 ```
 yarn config set workspaces-experimental true
 ```
+
+## initial setup
+```
+yarn lerna bootstrap
+yarn lerna run build
+yarn test
+```

@@ -1,3 +1,5 @@
+# libraries should not use lockfiles
+yarn.lock
 ### Node ###
 # Logs
 logs

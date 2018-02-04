@@ -43,4 +43,15 @@ describe('mvn-artifact-url', function() {
     };
     expect(filename(artifact)).to.equal('openejb-itests-webapp-3.0-123.jar');
   });
+  it('should suffix with SNAPSHOT if snapshot version could not be found', function() {
+    let artifact = {
+      groupId: 'org.apache.openejb',
+      artifactId: 'openejb-itests-webapp',
+      version: '3.0',
+      isSnapShot: true,
+    };
+    expect(filename(artifact)).to.equal(
+      'openejb-itests-webapp-3.0-SNAPSHOT.jar'
+    );
+  });
 });

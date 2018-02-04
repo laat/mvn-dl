@@ -11,8 +11,15 @@ export interface Artifact {
 }
 
 function getVersion(artifact: Artifact): string {
+  let suffix = '';
+  if (artifact.isSnapShot) {
+    if (artifact.snapShotVersion != null) {
+      suffix = `-${artifact.snapShotVersion}`;
+    } else {
+      suffix = '-SNAPSHOT';
+    }
+  }
   const version = artifact.version;
-  const suffix = artifact.isSnapShot ? `-${artifact.snapShotVersion}` : '';
   return `${version}${suffix}`;
 }
 

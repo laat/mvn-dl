@@ -7,7 +7,8 @@ Usage:
 
 Options:
  -d --destination <destination>  Destination folder
- -r --repository <url>          Url to the maven repo
+ -f --filename <filename>        Output filename
+ -r --repository <url>           Url to the maven repo
 
 Examples:
  # download jar
@@ -20,7 +21,8 @@ const args = docopt(doc, { version: require('../package.json').version });
 download(
   args['<artifact>'],
   args['--destination'],
-  args['--repository']
+  args['--repository'],
+  args['--filename']
 ).catch(err => {
   console.error(err);
 });

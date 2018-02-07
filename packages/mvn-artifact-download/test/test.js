@@ -23,6 +23,25 @@ describe('mvn-artifact-url', function() {
       .to.eventually.equal(cwd + '/commons-lang3-3.4.jar')
       .and.notify(done);
   });
+  it('should download artifact with custom filename', function(done) {
+    nock('https://repo1.maven.org/maven2/')
+      .get('/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar')
+      .reply(200, 'Success');
+
+    const customFilename = 'custom.jar';
+    mockFs();
+
+    let dl = download(
+      'org.apache.commons:commons-lang3:3.4',
+      undefined,
+      undefined,
+      customFilename
+    );
+
+    expect(dl)
+      .to.eventually.equal(cwd + '/' + customFilename)
+      .and.notify(done);
+  });
   it('should download artifact to destination', function(done) {
     nock('https://repo1.maven.org/maven2/')
       .get('/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar')
@@ -76,7 +95,7 @@ describe('mvn-artifact-url', function() {
     let dl = download('org.apache.commons:commons-lang3:3.4-SNAPSHOT');
 
     expect(dl)
-      .to.eventually.equal(cwd + '/commons-lang3-3.4-1-23.jar')
+      .to.eventually.equal(cwd + '/commons-lang3-3.4-SNAPSHOT.jar')
       .and.notify(done);
   });
 });

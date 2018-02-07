@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import parseName from 'mvn-artifact-name-parser';
-import filename from 'mvn-artifact-filename';
+import getFilename from 'mvn-artifact-filename';
 import artifactUrl from 'mvn-artifact-url';
 import fetch from 'node-fetch';
 
@@ -20,21 +20,25 @@ function pipeToFile(body: NodeJS.ReadableStream, destFile: string) {
   });
 }
 
-export default async function download(
+export default (async function download(
   artifactName: string,
   destination?: string,
-  repository?: string
+  repository?: string,
+  filename?: string
 ) {
   destination = destination || process.cwd();
   const artifact = parseName(artifactName);
 
   const url = await artifactUrl(artifact, repository);
 
-  const destFile = path.join(destination || process.cwd(), filename(artifact));
+  const destFile = path.join(
+    destination || process.cwd(),
+    filename || getFilename(artifact)
+  );
   const response = await fetch(url);
   if (response.status !== 200) {
     throw new Error(`Unable to fetch ${url}. Status ${response.status}`);
   }
   await pipeToFile(response.body, destFile);
   return destFile;
-}
+});

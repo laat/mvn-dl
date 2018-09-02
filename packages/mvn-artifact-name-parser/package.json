@@ -1,6 +1,6 @@
 {
   "name": "mvn-artifact-name-parser",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "description": "Parse java artifact names",
   "main": "./lib/parse.js",
   "typings": "./lib/parse.d.ts",

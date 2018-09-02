@@ -6,6 +6,7 @@
   "jsnext:main": "lib/cli.js",
   "bin": "lib/cli.js",
   "scripts": {
+    "test": "bash ./scripts/test.sh",
     "build": "babel src -d lib",
     "prepublish": "npm run build"
   },

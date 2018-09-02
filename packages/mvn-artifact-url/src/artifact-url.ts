@@ -1,5 +1,4 @@
-import * as path from 'path';
-import * as util from 'util';
+import path from 'path';
 import filename from 'mvn-artifact-filename';
 import fetch from 'node-fetch';
 import parseXmlString from './parseXmlString';
@@ -41,15 +40,15 @@ async function latestSnapShotVersion(artifact: Artifact, basepath: string) {
   return version;
 }
 
-export default async function artifactUrl(
+export default (async function artifactUrl(
   artifact: Artifact,
-  basepath: string
+  basePath?: string
 ) {
-  const prefix = basepath || 'https://repo1.maven.org/maven2/';
+  const prefix = basePath || 'https://repo1.maven.org/maven2/';
   if (artifact.isSnapShot) {
     const snapShotVersion = await latestSnapShotVersion(artifact, prefix);
     return prefix + artifactPath({ ...artifact, snapShotVersion });
   } else {
     return prefix + artifactPath(artifact);
   }
-}
+});

@@ -25,15 +25,15 @@
     "url": "https://github.com/laat/mvn-dl/issues"
   },
   "engines": {
-    "node": ">=6"
+    "node": ">=8"
   },
   "homepage": "https://github.com/laat/mvn-dl#readme",
   "devDependencies": {
-    "@types/node": "^8.0.27",
+    "@types/node": "^10.9.4",
     "chai": "*",
     "mocha": "*",
     "readme-assert": "^5.0.5",
-    "typescript": "^2.3.2"
+    "typescript": "^3.0.3"
   },
   "babel": {
     "presets": [

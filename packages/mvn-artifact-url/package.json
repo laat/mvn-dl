@@ -25,17 +25,17 @@
     "url": "https://github.com/laat/mvn-dl/issues"
   },
   "engines": {
-    "node": ">=6"
+    "node": ">=8"
   },
   "homepage": "https://github.com/laat/mvn-dl#readme",
   "dependencies": {
     "mvn-artifact-filename": "^3.0.2",
-    "node-fetch": "^1.7.2",
+    "node-fetch": "^2.2.0",
     "xml2js": "^0.4.17"
   },
   "devDependencies": {
-    "@types/node": "^8.0.27",
-    "@types/node-fetch": "^1.6.7",
+    "@types/node": "^10.9.4",
+    "@types/node-fetch": "^2.1.2",
     "@types/xml2js": "^0.4.0",
     "babel-polyfill": "^6.26.0",
     "chai": "*",
@@ -44,7 +44,7 @@
     "mock-fs": "^4.4.1",
     "nock": "^9.0.14",
     "readme-assert": "^5.0.5",
-    "typescript": "^2.5.2"
+    "typescript": "^3.0.3"
   },
   "babel": {
     "presets": [

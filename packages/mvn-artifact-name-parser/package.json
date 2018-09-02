@@ -15,23 +15,28 @@
     "type": "git",
     "url": "git+https://github.com/laat/mvn-dl.git"
   },
-  "keywords": ["maven", "artifact"],
+  "keywords": [
+    "maven",
+    "artifact"
+  ],
   "author": "Sigurd Fosseng",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/laat/mvn-dl/issues"
   },
   "engines": {
-    "node": ">=6"
+    "node": ">=8"
   },
   "homepage": "https://github.com/laat/mvn-dl#readme",
   "devDependencies": {
     "chai": "*",
     "mocha": "*",
     "readme-assert": "^5.0.5",
-    "typescript": "^2.3.2"
+    "typescript": "^3.0.3"
   },
   "babel": {
-    "presets": ["env"]
+    "presets": [
+      "env"
+    ]
   }
 }

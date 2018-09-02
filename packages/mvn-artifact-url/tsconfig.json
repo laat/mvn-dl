@@ -2,11 +2,12 @@
   "compilerOptions": {
     "declaration": true,
     "module": "commonjs",
-    "target": "es2015",
-    "noImplicitAny": true,
+    "target": "es2018",
+    "strict": true,
     "outDir": "lib",
     "rootDir": "src",
-    "sourceMap": true
+    "sourceMap": false,
+    "esModuleInterop": true
   },
   "exclude": ["node_modules", "lib"]
 }

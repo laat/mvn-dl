@@ -47,7 +47,7 @@ export default (async function artifactUrl(
   const prefix = basePath || 'https://repo1.maven.org/maven2/';
   if (artifact.isSnapShot) {
     const snapShotVersion = await latestSnapShotVersion(artifact, prefix);
-    return prefix + artifactPath({ ...artifact, snapShotVersion });
+    return prefix + artifactPath({ snapShotVersion, ...artifact });
   } else {
     return prefix + artifactPath(artifact);
   }

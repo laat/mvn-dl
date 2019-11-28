@@ -6,7 +6,7 @@
   "typings": "lib/artifact-download.d.ts",
   "scripts": {
     "test": "npm run test:unit",
-    "test:unit": "mocha --compilers js:babel-register --require babel-polyfill --reporter=tap",
+    "test:unit": "mocha -r @babel/register -r @babel/polyfill --reporter=tap",
     "build": "tsc --project ./tsconfig.json",
     "prepare": "npm run build"
   },
@@ -28,24 +28,24 @@
   },
   "homepage": "https://github.com/laat/mvn-dl#readme",
   "devDependencies": {
-    "@types/node": "^10.9.4",
-    "@types/node-fetch": "^2.1.2",
+    "@types/node": "^12.12.14",
+    "@types/node-fetch": "^2.5.4",
     "chai": "*",
     "chai-as-promised": "^7.1.1",
     "mocha": "*",
-    "mock-fs": "^4.3.0",
-    "nock": "^9.0.13",
-    "typescript": "^3.0.3"
+    "mock-fs": "^4.10.4",
+    "nock": "^11.7.0",
+    "typescript": "^3.7.2"
   },
   "dependencies": {
     "mvn-artifact-filename": "^4.0.0",
     "mvn-artifact-name-parser": "^4.0.0",
     "mvn-artifact-url": "^4.0.0",
-    "node-fetch": "^2.2.0"
+    "node-fetch": "^2.6.0"
   },
   "babel": {
     "presets": [
-      "env"
+      "@babel/preset-env"
     ]
   }
 }

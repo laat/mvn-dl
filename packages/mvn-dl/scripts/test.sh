@@ -9,7 +9,7 @@ node ./lib/cli.js org.apache.commons:commons-lang3:3.4 --filename test-download.
 
 if [ -f test-download.jar ];
 then
-  echo "donload succeded";
+  echo "download succeded";
   rm test-download.jar
 else
   echo "download failed"

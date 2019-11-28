@@ -5,8 +5,8 @@
   "main": "lib/artifact-url.js",
   "typings": "lib/artifact-url.d.ts",
   "scripts": {
-    "test:unit": "mocha --compilers js:babel-core/register -r babel-polyfill --reporter=tap",
-    "test:readme": "readme-assert --require ./test/readme.setup.js",
+    "test:unit": "mocha -r @babel/register -r @babel/polyfill --reporter=tap",
+    "test:readme": "readme-assert --auto --require ./test/readme.setup.js",
     "test": "npm run test:unit && npm run test:readme",
     "build": "tsc",
     "prepublish": "npm run build"
@@ -30,27 +30,24 @@
   "homepage": "https://github.com/laat/mvn-dl#readme",
   "dependencies": {
     "mvn-artifact-filename": "^4.0.0",
-    "node-fetch": "^2.2.0",
-    "xml2js": "^0.4.17"
+    "node-fetch": "^2.6.0",
+    "xml2js": "^0.4.22"
   },
   "devDependencies": {
-    "@types/node": "^10.9.4",
-    "@types/node-fetch": "^2.1.2",
-    "@types/xml2js": "^0.4.0",
-    "babel-polyfill": "^6.26.0",
+    "@types/node": "^12.12.14",
+    "@types/node-fetch": "^2.5.4",
+    "@types/xml2js": "^0.4.5",
     "chai": "*",
     "chai-as-promised": "^7.1.1",
     "mocha": "*",
-    "mock-fs": "^4.4.1",
-    "nock": "^9.0.14",
-    "readme-assert": "^5.0.5",
-    "typescript": "^3.0.3"
+    "mock-fs": "^4.10.4",
+    "nock": "^11.7.0",
+    "readme-assert": "^6.0.3",
+    "typescript": "^3.7.2"
   },
   "babel": {
     "presets": [
-      [
-        "env"
-      ]
+      "@babel/preset-env"
     ]
   }
 }

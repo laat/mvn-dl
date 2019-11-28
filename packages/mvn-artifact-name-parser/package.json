@@ -5,8 +5,8 @@
   "main": "./lib/parse.js",
   "typings": "./lib/parse.d.ts",
   "scripts": {
-    "test:unit": "mocha --compilers js:babel-register --reporter=tap",
-    "test:readme": "readme-assert -r babel-register",
+    "test:unit": "mocha -r @babel/register --reporter=tap",
+    "test:readme": "readme-assert --auto",
     "test": "npm run test:unit && npm run test:readme",
     "build": "tsc",
     "prepublish": "npm run build"
@@ -31,12 +31,12 @@
   "devDependencies": {
     "chai": "*",
     "mocha": "*",
-    "readme-assert": "^5.0.5",
-    "typescript": "^3.0.3"
+    "readme-assert": "^6.0.3",
+    "typescript": "^3.7.2"
   },
   "babel": {
     "presets": [
-      "env"
+      "@babel/preset-env"
     ]
   }
 }

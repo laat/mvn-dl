@@ -5,8 +5,8 @@
   "main": "./lib/filename.js",
   "typings": "./lib/filename.d.ts",
   "scripts": {
-    "test:unit": "mocha --compilers js:babel-register --reporter=tap",
-    "test:readme": "readme-assert",
+    "test:unit": "mocha -r @babel/register --reporter=tap",
+    "test:readme": "readme-assert --auto",
     "test": "npm run test:readme && npm run test:unit",
     "build": "tsc",
     "prepublish": "npm run build"
@@ -29,15 +29,15 @@
   },
   "homepage": "https://github.com/laat/mvn-dl#readme",
   "devDependencies": {
-    "@types/node": "^10.9.4",
+    "@types/node": "^12.12.14",
     "chai": "*",
     "mocha": "*",
-    "readme-assert": "^5.0.5",
-    "typescript": "^3.0.3"
+    "readme-assert": "^6.0.3",
+    "typescript": "^3.7.2"
   },
   "babel": {
     "presets": [
-      "env"
+      "@babel/preset-env"
     ]
   }
 }

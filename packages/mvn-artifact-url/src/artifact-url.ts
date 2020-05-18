@@ -47,7 +47,7 @@ async function latestSnapShotVersion(
   const metadataUrl = basepath + groupPath(artifact) + '/maven-metadata.xml';
   const response = await fetch(metadataUrl, {
     agent: fetchOptions.agent,
-    timeout: fetchOptions.timeout
+    timeout: fetchOptions.timeout,
   });
   if (response.status !== 200) {
     throw new Error(
@@ -68,7 +68,11 @@ export default (async function artifactUrl(
 ) {
   const prefix = basePath || 'https://repo1.maven.org/maven2/';
   if (artifact.isSnapShot) {
-    const snapShotVersion = await latestSnapShotVersion(artifact, prefix, fetchOptions);
+    const snapShotVersion = await latestSnapShotVersion(
+      artifact,
+      prefix,
+      fetchOptions
+    );
     return prefix + artifactPath({ snapShotVersion, ...artifact });
   } else {
     return prefix + artifactPath(artifact);

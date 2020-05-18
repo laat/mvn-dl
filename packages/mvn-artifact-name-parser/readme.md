@@ -1,4 +1,5 @@
 # mvn-artifact-name-parser
+
 [![travis][travis-image]][travis-url]
 [![npm][npm-image]][npm-url]
 

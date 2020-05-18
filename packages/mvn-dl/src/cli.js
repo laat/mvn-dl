@@ -23,6 +23,6 @@ download(
   args['--destination'],
   args['--repository'],
   args['--filename']
-).catch(err => {
+).catch((err) => {
   console.error(err);
 });

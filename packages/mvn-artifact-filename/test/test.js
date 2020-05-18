@@ -3,8 +3,8 @@
 import { expect } from 'chai';
 import filename from '../';
 
-describe('mvn-artifact-url', function() {
-  it('should download artifact', function() {
+describe('mvn-artifact-url', function () {
+  it('should download artifact', function () {
     let artifact = {
       groupId: 'org.apache.commons',
       artifactId: 'commons-lang3',
@@ -12,7 +12,7 @@ describe('mvn-artifact-url', function() {
     };
     expect(filename(artifact)).to.equal('commons-lang3-3.4.jar');
   });
-  it('should yield the war filename', function() {
+  it('should yield the war filename', function () {
     let artifact = {
       groupId: 'org.apache.commons',
       artifactId: 'commons-lang3',
@@ -21,7 +21,7 @@ describe('mvn-artifact-url', function() {
     };
     expect(filename(artifact)).to.equal('commons-lang3-3.4.war');
   });
-  it('should yield the filename with a classifier', function() {
+  it('should yield the filename with a classifier', function () {
     let artifact = {
       groupId: 'org.apache.openejb',
       artifactId: 'openejb-itests-webapp',
@@ -33,7 +33,7 @@ describe('mvn-artifact-url', function() {
       'openejb-itests-webapp-3.0-beta-1-test.jar'
     );
   });
-  it('should yield the filename for the snapshot version', function() {
+  it('should yield the filename for the snapshot version', function () {
     let artifact = {
       groupId: 'org.apache.openejb',
       artifactId: 'openejb-itests-webapp',
@@ -43,7 +43,7 @@ describe('mvn-artifact-url', function() {
     };
     expect(filename(artifact)).to.equal('openejb-itests-webapp-3.0-123.jar');
   });
-  it('should suffix with SNAPSHOT if snapshot version could not be found', function() {
+  it('should suffix with SNAPSHOT if snapshot version could not be found', function () {
     let artifact = {
       groupId: 'org.apache.openejb',
       artifactId: 'openejb-itests-webapp',

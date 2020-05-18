@@ -1,4 +1,5 @@
 # mvn-artifact-download
+
 [![travis][travis-image]][travis-url]
 [![npm][npm-image]][npm-url]
 
@@ -18,19 +19,31 @@ $ npm install --save mvn-artifact-download
 ```js
 import download from 'mvn-artifact-download';
 
-download('org.apache.commons:commons-lang3:3.4')
+download('org.apache.commons:commons-lang3:3.4');
 // Promise that resolves to destination filename
 
-download('org.apache.commons:commons-lang3:3.4', '/path/to/destination/dir')
+download('org.apache.commons:commons-lang3:3.4', '/path/to/destination/dir');
 // Promise that resolves to destination filename
 
-download('org.apache.commons:commons-lang3:3.4', null, 'http://alternative.repo')
+download(
+  'org.apache.commons:commons-lang3:3.4',
+  null,
+  'http://alternative.repo'
+);
+// Promise that resolves to destination filename
+
+download(
+  'org.apache.commons:commons-lang3:3.4',
+  null,
+  'http://alternative.repo',
+  { timout: 1000 } // with optional timeout
+);
 // Promise that resolves to destination filename
 ```
 
 ## API
 
-### download(artifactName, [destinationFolder], [repository])
+### download(artifactName, [destinationFolder], [repository], [fetchOptions])
 
 Downloads an artifact from the repository
 
@@ -46,6 +59,13 @@ Default: `process.cwd()`
 #### repository
 
 Type: `string`
+
+#### fetchOptions
+
+An optional object containing
+
+Attribute: **timeout** `number` req/res timeout in ms
+Attribute: **agent** `http.Agent` allows custom proxy, certificate etc.
 
 ## License
 

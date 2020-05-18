@@ -31,11 +31,19 @@ download(
   'http://alternative.repo'
 );
 // Promise that resolves to destination filename
+
+download(
+  'org.apache.commons:commons-lang3:3.4',
+  null,
+  'http://alternative.repo',
+  { timout: 1000 } // with optional timeout
+);
+// Promise that resolves to destination filename
 ```
 
 ## API
 
-### download(artifactName, [destinationFolder], [repository])
+### download(artifactName, [destinationFolder], [repository], [fetchOptions])
 
 Downloads an artifact from the repository
 
@@ -51,6 +59,13 @@ Default: `process.cwd()`
 #### repository
 
 Type: `string`
+
+#### fetchOptions
+
+An optional object containing
+
+Attribute: **timeout** `number` req/res timeout in ms
+Attribute: **agent** `http.Agent` allows custom proxy, certificate etc.
 
 ## License
 

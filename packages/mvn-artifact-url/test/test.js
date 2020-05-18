@@ -6,15 +6,15 @@ import url from '../';
 const expect = chai.expect;
 chai.use(chaiAsPromised);
 
-describe('mvn-artifact-url', function() {
-  describe('of a regular artifact', function() {
+describe('mvn-artifact-url', function () {
+  describe('of a regular artifact', function () {
     let artifact = {
       groupId: 'org.apache.commons',
       artifactId: 'commons-lang3',
       version: '3.4',
     };
 
-    it('should contain a path to the artifact', function(done) {
+    it('should contain a path to the artifact', function (done) {
       let urlPromise = url(artifact, '.');
       expect(urlPromise)
         .to.eventually.contain(
@@ -23,14 +23,14 @@ describe('mvn-artifact-url', function() {
         .and.notify(done);
     });
 
-    it('should contain the default base url', function(done) {
+    it('should contain the default base url', function (done) {
       let urlPromise = url(artifact);
       expect(urlPromise)
         .to.eventually.contain('https://repo1.maven.org/maven2/')
         .and.notify(done);
     });
 
-    it('can contain a base url other than the default', function(done) {
+    it('can contain a base url other than the default', function (done) {
       let urlPromise = url(artifact, 'http://localhost/');
       expect(urlPromise)
         .to.eventually.contain('http://localhost/')
@@ -38,7 +38,7 @@ describe('mvn-artifact-url', function() {
     });
   });
 
-  describe('of an artifact with a classifier specified', function() {
+  describe('of an artifact with a classifier specified', function () {
     let artifact = {
       groupId: 'io.joynr.java.android',
       artifactId: 'joynr-android',
@@ -46,7 +46,7 @@ describe('mvn-artifact-url', function() {
       classifier: 'all',
     };
 
-    it('should contain a path to the artifact', function(done) {
+    it('should contain a path to the artifact', function (done) {
       let urlPromise = url(artifact, '.');
       expect(urlPromise)
         .to.eventually.contain(
@@ -56,7 +56,7 @@ describe('mvn-artifact-url', function() {
     });
   });
 
-  describe('of an artifact with packaging specified', function() {
+  describe('of an artifact with packaging specified', function () {
     let artifact = {
       groupId: 'org.apache.commons',
       artifactId: 'commons-lang3',
@@ -64,7 +64,7 @@ describe('mvn-artifact-url', function() {
       extension: 'pom',
     };
 
-    it('should contain a path to the artifact', function(done) {
+    it('should contain a path to the artifact', function (done) {
       let urlPromise = url(artifact, '.');
       expect(urlPromise)
         .to.eventually.contain(
@@ -74,7 +74,7 @@ describe('mvn-artifact-url', function() {
     });
   });
 
-  describe('of an artifact with snapshot version', function() {
+  describe('of an artifact with snapshot version', function () {
     let artifact = {
       groupId: 'org.apache.commons',
       artifactId: 'commons-lang3',
@@ -84,7 +84,7 @@ describe('mvn-artifact-url', function() {
 
     let metadataXml =
       '<metadata><groupId>org.apache.commons</groupId><artifactId>commons-lang3</artifactId><version>3.4-SNAPSHOT</version><versioning><snapshot><timestamp>1</timestamp><buildNumber>23</buildNumber></snapshot><lastUpdated>20120607154257</lastUpdated><snapshotVersions><snapshotVersion><extension>jar</extension><value>1.0-20120607.154257-1339076577</value><updated>20120607154257</updated></snapshotVersion></snapshotVersions></versioning></metadata>';
-    it('should contain a path to the artifact', function(done) {
+    it('should contain a path to the artifact', function (done) {
       nock('https://repo1.maven.org/maven2/')
         .get(
           '/org/apache/commons/commons-lang3/3.4-SNAPSHOT/maven-metadata.xml'
@@ -100,7 +100,7 @@ describe('mvn-artifact-url', function() {
     });
   });
 
-  describe('of an artifact with snapShotVersion defined in the Artifact object', function() {
+  describe('of an artifact with snapShotVersion defined in the Artifact object', function () {
     let artifact = {
       groupId: 'org.apache.commons',
       artifactId: 'commons-lang3',
@@ -111,7 +111,7 @@ describe('mvn-artifact-url', function() {
 
     let metadataXml =
       '<metadata><groupId>org.apache.commons</groupId><artifactId>commons-lang3</artifactId><version>3.4-SNAPSHOT</version><versioning><snapshot><timestamp>1</timestamp><buildNumber>23</buildNumber></snapshot><lastUpdated>20120607154257</lastUpdated><snapshotVersions><snapshotVersion><extension>jar</extension><value>1.0-20120607.154257-1339076577</value><updated>20120607154257</updated></snapshotVersion></snapshotVersions></versioning></metadata>';
-    it('should contain a path to the artifact', function(done) {
+    it('should contain a path to the artifact', function (done) {
       nock('https://repo1.maven.org/maven2/')
         .get(
           '/org/apache/commons/commons-lang3/3.4-SNAPSHOT/maven-metadata.xml'

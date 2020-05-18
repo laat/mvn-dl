@@ -1,4 +1,5 @@
 # mvn-dl
+
 [![travis][travis-image]][travis-url]
 [![npm][npm-image]][npm-url]
 
@@ -18,12 +19,12 @@ $ npm install --save -g mvn-dl
 ```js
 Usage:
  mvn-dl <artifact> [options]
- 
+
 Options:
  -d --destination <destination>  Destination folder
  -f --filename <filename>        Output filename
  -r --repository <url>           Url to the maven repo
- 
+
 Examples:
  # download jar
  mvn-dl org.apache.commons:commons-lang3:3.4

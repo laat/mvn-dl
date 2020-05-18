@@ -6,25 +6,18 @@
   "author": "Sigurd Fosseng <sigurd@fosseng.net>",
   "license": "MIT",
   "scripts": {
-    "test": "lerna run test",
-    "precommit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.{js,ts}": [
-      "prettier --write",
-      "git add"
-    ]
+    "prettier": "prettier '**/*.{ts,md,jsx}' '!**/lib/**' '!**/esm/**'",
+    "test": "npm run prettier -- --check && lerna run test",
+    "build": "lerna run build"
   },
   "devDependencies": {
-    "@babel/cli": "^7.7.4",
-    "@babel/core": "^7.7.4",
-    "@babel/polyfill": "^7.7.0",
-    "@babel/preset-env": "^7.7.4",
-    "@babel/register": "^7.7.4",
-    "husky": "^3.1.0",
-    "lerna": "^3.19.0",
-    "lint-staged": "^9.5.0",
-    "prettier": "^1.19.1"
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/register": "^7.9.0",
+    "lerna": "^3.21.0",
+    "prettier": "^2.0.5"
   },
   "workspaces": [
     "packages/*"

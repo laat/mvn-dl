@@ -12,7 +12,7 @@ function pipeToFile(body: NodeJS.ReadableStream, destFile: string) {
       file.close();
       resolve(destFile);
     });
-    file.on('error', err => {
+    file.on('error', (err) => {
       fs.unlink(destFile, function ignore() {});
       reject(err);
     });

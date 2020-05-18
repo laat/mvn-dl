@@ -1,4 +1,5 @@
 # mvn-artifact-url
+
 [![travis][travis-image]][travis-url]
 [![npm][npm-image]][npm-url]
 
@@ -24,12 +25,12 @@ let artifact = {
   version: '3.4',
 };
 
-url(artifact).then(resolved => {
+url(artifact).then((resolved) => {
   resolved;
   //=> 'https://repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar'
 });
 
-url(artifact, 'http://localhost/').then(resolved => {
+url(artifact, 'http://localhost/').then((resolved) => {
   resolved;
   //=> 'http://localhost/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar'
 });
@@ -40,7 +41,7 @@ url({
   artifactId: 'commons-lang3',
   version: '3.4',
   isSnapShot: true,
-}).then(resolved => {
+}).then((resolved) => {
   resolved;
   //=> 'https://repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.4-SNAPSHOT/commons-lang3-3.4-1-23.jar'
 });

@@ -29,11 +29,11 @@
   },
   "homepage": "https://github.com/laat/mvn-dl#readme",
   "devDependencies": {
-    "@types/node": "^12.12.14",
+    "@types/node": "^14.0.1",
     "chai": "*",
     "mocha": "*",
     "readme-assert": "^6.0.3",
-    "typescript": "^3.7.2"
+    "typescript": "^3.9.2"
   },
   "babel": {
     "presets": [

@@ -8,6 +8,14 @@
 [npm-image]: https://img.shields.io/npm/v/mvn-artifact-name-parser.svg?style=flat
 [npm-url]: https://npmjs.org/package/mvn-artifact-name-parser
 
+Parses maven coordinate strings of the following format
+
+```
+groupId:artifactId:version
+groupId:artifactId:extension:version
+groupId:artifactId:extension:classifier:version
+```
+
 ## Install
 
 ```

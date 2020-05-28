@@ -1,6 +1,6 @@
 {
   "name": "mvn-dl",
-  "version": "5.0.1",
+  "version": "5.1.0",
   "description": "CLI for downloading maven artifacts",
   "main": "lib/cli.js",
   "jsnext:main": "lib/cli.js",
@@ -29,7 +29,7 @@
   "homepage": "https://github.com/laat/mvn-dl#readme",
   "dependencies": {
     "docopt": "^0.6.2",
-    "mvn-artifact-download": "^5.0.1"
+    "mvn-artifact-download": "^5.1.0"
   },
   "babel": {
     "presets": [

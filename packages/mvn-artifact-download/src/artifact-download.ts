@@ -6,6 +6,15 @@ import artifactUrl from 'mvn-artifact-url';
 import fetch from 'node-fetch';
 import path from 'path';
 
+export interface Artifact {
+  groupId: string;
+  artifactId: string;
+  version: string;
+  extension?: string;
+  classifier?: string;
+  isSnapShot?: boolean;
+  snapShotVersion?: string;
+}
 export interface FetchOptions {
   /**
    * http.Agent instance, allows custom proxy, certificate etc.
@@ -35,20 +44,21 @@ function pipeToFile(body: NodeJS.ReadableStream, destFile: string) {
 }
 
 export default (async function download(
-  artifactName: string,
+  artifact: Artifact | string,
   destination?: string,
   repository?: string,
   filename?: string,
   fetchOptions: FetchOptions = {}
 ) {
   destination = destination || process.cwd();
-  const artifact = parseName(artifactName);
+  const artifactShape =
+    typeof artifact === 'string' ? parseName(artifact) : artifact;
 
-  const url = await artifactUrl(artifact, repository, fetchOptions);
+  const url = await artifactUrl(artifactShape, repository, fetchOptions);
 
   const destFile = path.join(
     destination || process.cwd(),
-    filename || getFilename(artifact)
+    filename || getFilename(artifactShape)
   );
   const response = await fetch(url, fetchOptions);
   if (response.status !== 200) {

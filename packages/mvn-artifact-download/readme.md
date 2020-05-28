@@ -22,6 +22,13 @@ import download from 'mvn-artifact-download';
 download('org.apache.commons:commons-lang3:3.4');
 // Promise that resolves to destination filename
 
+download({
+  groupId: 'org.apache.commons',
+  artifactId: 'commons-lang3',
+  version: '3.4',
+});
+// Promise that resolves to destination filename
+
 download('org.apache.commons:commons-lang3:3.4', '/path/to/destination/dir');
 // Promise that resolves to destination filename
 
@@ -49,7 +56,7 @@ Downloads an artifact from the repository
 
 #### artifactName
 
-Type: `string`
+Type: `string | Artifact`
 
 #### destinationFolder
 

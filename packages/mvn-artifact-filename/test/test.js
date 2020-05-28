@@ -3,7 +3,7 @@
 import { expect } from 'chai';
 import filename from '../';
 
-describe('mvn-artifact-url', function () {
+describe('mvn-artifact-filename', function () {
   it('should download artifact', function () {
     let artifact = {
       groupId: 'org.apache.commons',

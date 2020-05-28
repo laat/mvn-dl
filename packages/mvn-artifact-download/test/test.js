@@ -10,7 +10,7 @@ chai.use(chaiAsPromised);
 
 const cwd = process.cwd();
 
-describe('mvn-artifact-url', function () {
+describe('mvn-artifact-download', function () {
   it('should download artifact', function (done) {
     nock('https://repo1.maven.org/maven2/')
       .get('/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar')
@@ -18,6 +18,22 @@ describe('mvn-artifact-url', function () {
 
     mockFs();
     let dl = download('org.apache.commons:commons-lang3:3.4');
+
+    expect(dl)
+      .to.eventually.equal(cwd + '/commons-lang3-3.4.jar')
+      .and.notify(done);
+  });
+  it('should download artifact defined as object', function (done) {
+    nock('https://repo1.maven.org/maven2/')
+      .get('/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar')
+      .reply(200, 'Success');
+
+    mockFs();
+    let dl = download({
+      groupId: 'org.apache.commons',
+      artifactId: 'commons-lang3',
+      version: '3.4',
+    });
 
     expect(dl)
       .to.eventually.equal(cwd + '/commons-lang3-3.4.jar')

@@ -66,15 +66,18 @@ export default (async function artifactUrl(
   basePath?: string,
   fetchOptions: FetchOptions = {}
 ) {
-  const prefix = basePath || 'https://repo1.maven.org/maven2/';
+  let url = basePath || 'https://repo1.maven.org/maven2/';
   if (artifact.isSnapShot) {
     const snapShotVersion = await latestSnapShotVersion(
       artifact,
-      prefix,
+      url,
       fetchOptions
     );
-    return prefix + artifactPath({ snapShotVersion, ...artifact });
+    url += artifactPath({ snapShotVersion, ...artifact });
   } else {
-    return prefix + artifactPath(artifact);
+    url += artifactPath(artifact);
   }
+
+  return url.replace(/\\/g, '/')
+
 });

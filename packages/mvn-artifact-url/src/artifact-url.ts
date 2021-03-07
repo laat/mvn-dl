@@ -1,7 +1,6 @@
 import { Agent } from 'http';
 import filename from 'mvn-artifact-filename';
 import fetch from 'node-fetch';
-import path from 'path';
 import parseXmlString from './parseXmlString';
 
 export interface Artifact {
@@ -36,7 +35,7 @@ function groupPath(artifact: Artifact): string {
 }
 
 function artifactPath(artifact: Artifact): string {
-  return path.join(groupPath(artifact), filename(artifact));
+  return groupPath(artifact) + '/' + filename(artifact);
 }
 
 async function latestSnapShotVersion(

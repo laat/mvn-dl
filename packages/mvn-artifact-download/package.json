@@ -5,8 +5,7 @@
   "main": "lib/artifact-download.js",
   "typings": "lib/artifact-download.d.ts",
   "scripts": {
-    "test": "npm run test:unit",
-    "test:unit": "mocha -r @babel/register -r @babel/polyfill --reporter=tap",
+    "test": "mocha -r @babel/register -r @babel/polyfill --reporter=tap",
     "build": "tsc --project ./tsconfig.json",
     "prepare": "npm run build"
   },

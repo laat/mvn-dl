@@ -5,9 +5,7 @@
   "main": "lib/artifact-url.js",
   "typings": "lib/artifact-url.d.ts",
   "scripts": {
-    "test:unit": "mocha -r @babel/register -r @babel/polyfill --reporter=tap",
-    "test:readme": "readme-assert --auto --require ./test/readme.setup.js",
-    "test": "npm run test:unit && npm run test:readme",
+    "test": "mocha -r @babel/register -r @babel/polyfill --reporter=tap",
     "build": "tsc",
     "prepublish": "npm run build"
   },
@@ -42,7 +40,6 @@
     "mocha": "*",
     "mock-fs": "^4.12.0",
     "nock": "^12.0.3",
-    "readme-assert": "^6.0.3",
     "typescript": "^3.9.2"
   },
   "babel": {

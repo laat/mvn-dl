@@ -5,9 +5,7 @@
   "main": "./lib/filename.js",
   "typings": "./lib/filename.d.ts",
   "scripts": {
-    "test:unit": "mocha -r @babel/register --reporter=tap",
-    "test:readme": "readme-assert --auto",
-    "test": "npm run test:readme && npm run test:unit",
+    "test": "mocha -r @babel/register --reporter=tap",
     "build": "tsc",
     "prepublish": "npm run build"
   },
@@ -32,7 +30,6 @@
     "@types/node": "^14.0.1",
     "chai": "*",
     "mocha": "*",
-    "readme-assert": "^6.0.3",
     "typescript": "^3.9.2"
   },
   "babel": {

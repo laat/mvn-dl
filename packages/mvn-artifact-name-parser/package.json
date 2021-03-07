@@ -5,9 +5,7 @@
   "main": "./lib/parse.js",
   "typings": "./lib/parse.d.ts",
   "scripts": {
-    "test:unit": "mocha -r @babel/register --reporter=tap",
-    "test:readme": "readme-assert --auto",
-    "test": "npm run test:unit && npm run test:readme",
+    "test": "mocha -r @babel/register --reporter=tap",
     "build": "tsc",
     "prepublish": "npm run build"
   },
@@ -31,7 +29,6 @@
   "devDependencies": {
     "chai": "*",
     "mocha": "*",
-    "readme-assert": "^6.0.3",
     "typescript": "^3.9.2"
   },
   "babel": {

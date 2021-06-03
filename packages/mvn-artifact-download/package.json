@@ -6,8 +6,7 @@
   "typings": "lib/artifact-download.d.ts",
   "scripts": {
     "test": "mocha -r @babel/register -r @babel/polyfill --reporter=tap",
-    "build": "tsc --project ./tsconfig.json",
-    "prepare": "npm run build"
+    "build": "tsc --project ./tsconfig.json"
   },
   "repository": {
     "type": "git",

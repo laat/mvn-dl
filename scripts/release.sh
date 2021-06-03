@@ -7,8 +7,8 @@ set -o nounset
 
 git clean -xfd
 
-yarn
-yarn lerna bootstrap
-yarn lerna run build
-yarn test
-yarn lerna publish
+npm ci
+npx lerna bootstrap
+npm run build
+npm test
+npx lerna publish

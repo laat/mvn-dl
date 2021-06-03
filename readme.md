@@ -16,21 +16,13 @@ This is a mono-repo for **mvn-dl**
 - [mvn-artifact-filename](./packages/mvn-artifact-filename)
 - [mvn-artifact-download](./packages/mvn-artifact-download)
 
-## Development
-
-This repository uses yarn workspaces
-
-```
-yarn config set workspaces-experimental true
-```
-
 ### initial setup
 
 ```
-yarn
-yarn lerna bootstrap
-yarn lerna run build
+npm i
+npx lerna bootstrap
+npm run build
 
 # make sure everything works
-yarn test
+npm test
 ```

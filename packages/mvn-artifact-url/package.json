@@ -6,8 +6,7 @@
   "typings": "lib/artifact-url.d.ts",
   "scripts": {
     "test": "mocha -r @babel/register -r @babel/polyfill --reporter=tap",
-    "build": "tsc",
-    "prepublish": "npm run build"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",

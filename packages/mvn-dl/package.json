@@ -7,8 +7,7 @@
   "bin": "lib/cli.js",
   "scripts": {
     "test": "bash ./scripts/test.sh",
-    "build": "babel src -d lib",
-    "prepublish": "npm run build"
+    "build": "babel src -d lib"
   },
   "repository": {
     "type": "git",

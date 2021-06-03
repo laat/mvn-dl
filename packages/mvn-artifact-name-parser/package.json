@@ -6,8 +6,7 @@
   "typings": "./lib/parse.d.ts",
   "scripts": {
     "test": "mocha -r @babel/register --reporter=tap",
-    "build": "tsc",
-    "prepublish": "npm run build"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",

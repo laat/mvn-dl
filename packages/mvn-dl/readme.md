@@ -1,6 +1,5 @@
 # mvn-dl
 
-[![travis][travis-image]][travis-url]
 [![npm][npm-image]][npm-url]
 
 [travis-image]: https://img.shields.io/travis/laat/mvn-dl.svg?style=flat&branch=master

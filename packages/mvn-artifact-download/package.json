@@ -22,7 +22,7 @@
     "url": "https://github.com/laat/mvn-dl/issues"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=12"
   },
   "homepage": "https://github.com/laat/mvn-dl#readme",
   "devDependencies": {

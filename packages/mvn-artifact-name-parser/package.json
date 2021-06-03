@@ -28,7 +28,7 @@
   "devDependencies": {
     "chai": "*",
     "mocha": "*",
-    "typescript": "^3.9.2"
+    "typescript": "^4.3.2"
   },
   "babel": {
     "presets": [

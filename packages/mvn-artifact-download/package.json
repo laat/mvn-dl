@@ -39,7 +39,7 @@
     "mvn-artifact-filename": "^6.0.0",
     "mvn-artifact-name-parser": "^6.0.0",
     "mvn-artifact-url": "^6.0.0",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^3.1.1"
   },
   "babel": {
     "presets": [

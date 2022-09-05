@@ -11,12 +11,12 @@
     "build": "lerna run build"
   },
   "devDependencies": {
-    "@babel/cli": "^7.14.3",
-    "@babel/core": "^7.14.3",
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.19.0",
     "@babel/polyfill": "^7.8.7",
-    "@babel/preset-env": "^7.14.4",
-    "@babel/register": "^7.13.16",
-    "lerna": "^4.0.0",
-    "prettier": "^2.3.0"
+    "@babel/preset-env": "^7.19.0",
+    "@babel/register": "^7.18.9",
+    "lerna": "^5.5.0",
+    "prettier": "^2.7.1"
   }
 }

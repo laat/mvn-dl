@@ -1,6 +1,6 @@
 {
   "name": "mvn-artifact-download",
-  "version": "6.1.0",
+  "version": "6.1.1",
   "description": "Download maven artifacts",
   "main": "lib/artifact-download.js",
   "typings": "lib/artifact-download.d.ts",

@@ -1,6 +1,6 @@
 {
   "name": "mvn-artifact-filename",
-  "version": "6.1.0",
+  "version": "6.1.2",
   "description": "create filename for maven artifact",
   "main": "./lib/filename.js",
   "typings": "./lib/filename.d.ts",

@@ -1,7 +1,5 @@
-import { Agent } from 'http';
 import filename from 'mvn-artifact-filename';
-import fetch, { HeadersInit } from 'node-fetch';
-import parseXmlString from './parseXmlString';
+import parseXmlString from './parseXmlString.js';
 
 export interface Artifact {
   groupId: string;
@@ -14,16 +12,6 @@ export interface Artifact {
 }
 
 export interface FetchOptions {
-  /**
-   * http.Agent instance, allows custom proxy, certificate etc.
-   * @default null
-   */
-  agent?: Agent | ((parsedUrl: URL) => Agent);
-  /**
-   * req/res timeout in ms, it resets on redirect. 0 to disable (OS limit applies)
-   * @default 0
-   */
-  timeout?: number;
   /**
    * request headers, e.g. `{ Authorization: "Bearer ..." }` for private registries
    */
@@ -61,7 +49,7 @@ async function latestSnapShotVersion(
   return version;
 }
 
-export default (async function artifactUrl(
+export default async function artifactUrl(
   artifact: Artifact,
   basePath?: string,
   fetchOptions: FetchOptions = {}
@@ -77,4 +65,4 @@ export default (async function artifactUrl(
   } else {
     return prefix + artifactPath(artifact);
   }
-});
+}

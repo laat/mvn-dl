@@ -1,6 +1,15 @@
 #!/usr/bin/env node
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
 import { docopt } from 'docopt';
 import download from 'mvn-artifact-download';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const pkg = JSON.parse(
+  readFileSync(join(__dirname, '..', 'package.json'), 'utf8')
+);
+
 const doc = `
 Usage:
  mvn-dl <artifact> [options]
@@ -17,7 +26,7 @@ Examples:
  # download jar to dist
  mvn-dl org.apache.commons:commons-lang3:3.4 -d dist
 `;
-const args = docopt(doc, { version: require('../package.json').version });
+const args = docopt(doc, { version: pkg.version });
 download(
   args['<artifact>'],
   args['--destination'],
@@ -25,4 +34,5 @@ download(
   args['--filename']
 ).catch((err) => {
   console.error(err);
+  process.exit(1);
 });

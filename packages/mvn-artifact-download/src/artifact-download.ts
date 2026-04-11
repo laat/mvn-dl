@@ -3,7 +3,7 @@ import { Agent } from 'http';
 import getFilename from 'mvn-artifact-filename';
 import parseName from 'mvn-artifact-name-parser';
 import artifactUrl from 'mvn-artifact-url';
-import fetch from 'node-fetch';
+import fetch, { HeadersInit } from 'node-fetch';
 import path from 'path';
 
 export interface Artifact {
@@ -26,6 +26,10 @@ export interface FetchOptions {
    * @default 0
    */
   timeout?: number;
+  /**
+   * request headers, e.g. `{ Authorization: "Bearer ..." }` for private registries
+   */
+  headers?: HeadersInit;
 }
 
 function pipeToFile(body: NodeJS.ReadableStream, destFile: string) {

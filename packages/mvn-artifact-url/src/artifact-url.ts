@@ -1,6 +1,6 @@
 import { Agent } from 'http';
 import filename from 'mvn-artifact-filename';
-import fetch from 'node-fetch';
+import fetch, { HeadersInit } from 'node-fetch';
 import parseXmlString from './parseXmlString';
 
 export interface Artifact {
@@ -24,6 +24,10 @@ export interface FetchOptions {
    * @default 0
    */
   timeout?: number;
+  /**
+   * request headers, e.g. `{ Authorization: "Bearer ..." }` for private registries
+   */
+  headers?: HeadersInit;
 }
 
 function groupPath(artifact: Artifact): string {
@@ -44,10 +48,7 @@ async function latestSnapShotVersion(
   fetchOptions: FetchOptions = {}
 ) {
   const metadataUrl = basepath + groupPath(artifact) + '/maven-metadata.xml';
-  const response = await fetch(metadataUrl, {
-    agent: fetchOptions.agent,
-    timeout: fetchOptions.timeout,
-  });
+  const response = await fetch(metadataUrl, fetchOptions);
   if (response.status !== 200) {
     throw new Error(
       `Unable to fetch ${metadataUrl}. Status ${response.status}`

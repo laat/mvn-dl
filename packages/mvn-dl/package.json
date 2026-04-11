@@ -2,12 +2,15 @@
   "name": "mvn-dl",
   "version": "6.1.2",
   "description": "CLI for downloading maven artifacts",
-  "main": "lib/cli.js",
-  "jsnext:main": "lib/cli.js",
-  "bin": "lib/cli.js",
+  "type": "module",
+  "main": "src/cli.js",
+  "bin": "src/cli.js",
+  "files": [
+    "src"
+  ],
   "scripts": {
     "test": "bash ./scripts/test.sh",
-    "build": "babel src -d lib"
+    "build": "echo 'no build'"
   },
   "repository": {
     "type": "git",
@@ -23,16 +26,11 @@
     "url": "https://github.com/laat/mvn-dl/issues"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=22"
   },
   "homepage": "https://github.com/laat/mvn-dl#readme",
   "dependencies": {
     "docopt": "^0.6.2",
     "mvn-artifact-download": "^6.1.2"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
   }
 }

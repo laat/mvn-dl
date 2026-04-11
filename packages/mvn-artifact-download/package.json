@@ -2,10 +2,21 @@
   "name": "mvn-artifact-download",
   "version": "6.1.2",
   "description": "Download maven artifacts",
-  "main": "lib/artifact-download.js",
-  "typings": "lib/artifact-download.d.ts",
+  "type": "module",
+  "main": "./lib/artifact-download.js",
+  "types": "./lib/artifact-download.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/artifact-download.d.ts",
+      "default": "./lib/artifact-download.js"
+    }
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
   "scripts": {
-    "test": "mocha -r @babel/register -r @babel/polyfill --reporter=tap",
+    "test": "node --test 'test/**/*.test.js'",
     "build": "tsc --project ./tsconfig.json"
   },
   "repository": {
@@ -22,28 +33,17 @@
     "url": "https://github.com/laat/mvn-dl/issues"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=22"
   },
   "homepage": "https://github.com/laat/mvn-dl#readme",
   "devDependencies": {
-    "@types/node": "^15.12.0",
-    "@types/node-fetch": "^2.5.10",
-    "chai": "*",
-    "chai-as-promised": "^7.1.1",
-    "mocha": "*",
-    "mock-fs": "^5.0.0",
-    "nock": "^13.1.0",
-    "typescript": "^4.3.2"
+    "@types/node": "^22.7.4",
+    "nock": "^14.0.12",
+    "typescript": "^5.6.2"
   },
   "dependencies": {
     "mvn-artifact-filename": "^6.1.2",
     "mvn-artifact-name-parser": "^6.1.2",
-    "mvn-artifact-url": "^6.1.2",
-    "node-fetch": "^2.6.1"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
+    "mvn-artifact-url": "^6.1.2"
   }
 }

@@ -1,13 +1,15 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "module": "commonjs",
-    "target": "es2018",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ES2022",
     "strict": true,
     "outDir": "lib",
     "rootDir": "src",
     "sourceMap": false,
     "esModuleInterop": true
   },
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "lib"]
 }

@@ -5,7 +5,7 @@ set -o pipefail
 set -o nounset
 # set -o xtrace
 
-node ./lib/cli.js org.apache.commons:commons-lang3:3.4 --filename test-download.jar
+node ./src/cli.js org.apache.commons:commons-lang3:3.4 --filename test-download.jar
 
 if [ -f test-download.jar ];
 then

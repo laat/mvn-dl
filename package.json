@@ -18,7 +18,7 @@
     "build": "lerna run build"
   },
   "devDependencies": {
-    "lerna": "^8.2.2",
+    "lerna": "^9.0.7",
     "prettier": "^3.3.3",
     "typescript": "^5.6.2"
   }

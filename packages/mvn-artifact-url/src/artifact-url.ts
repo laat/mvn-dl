@@ -1,5 +1,5 @@
 import filename from 'mvn-artifact-filename';
-import parseXmlString from './parseXmlString.js';
+import parseSnapshotVersion from './parseSnapshotVersion.js';
 
 export interface Artifact {
   groupId: string;
@@ -43,10 +43,7 @@ async function latestSnapShotVersion(
     );
   }
   const body = await response.text();
-  const xml: any = await parseXmlString(body);
-  const snapshot = xml.metadata.versioning[0].snapshot[0];
-  const version = snapshot.timestamp[0] + '-' + snapshot.buildNumber[0];
-  return version;
+  return parseSnapshotVersion(body);
 }
 
 export default async function artifactUrl(

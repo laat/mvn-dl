@@ -35,8 +35,13 @@ download(
   'org.apache.commons:commons-lang3:3.4',
   null,
   'http://alternative.repo',
-  { timout: 1000 } // with optional timeout
+  { signal: AbortSignal.timeout(1000) } // with optional timeout
 );
+// Promise that resolves to destination filename
+
+download('org.apache.commons:commons-lang3:3.4', null, 'http://private.repo', {
+  headers: { Authorization: 'Bearer my-token' }, // for private registries
+});
 // Promise that resolves to destination filename
 ```
 
@@ -61,10 +66,12 @@ Type: `string`
 
 #### fetchOptions
 
-An optional object containing
+Type: [`RequestInit`](https://developer.mozilla.org/en-US/docs/Web/API/RequestInit)
 
-Attribute: **timeout** `number` req/res timeout in ms
-Attribute: **agent** `http.Agent` allows custom proxy, certificate etc.
+Optional options passed to the built-in `fetch`, for example
+
+Attribute: **headers** `HeadersInit` request headers, e.g. `{ Authorization: 'Bearer ...' }` for private registries
+Attribute: **signal** `AbortSignal` cancellation/timeout, e.g. `AbortSignal.timeout(1000)`
 
 ## License
 

@@ -91,6 +91,33 @@ test('should download artifact from custom repository', async () => {
   assert.equal(result, path.join(tmpDir, 'commons-lang3-3.4.jar'));
 });
 
+test('should forward fetchOptions.headers to the registry', async () => {
+  nock('https://private.example.com/maven2/', {
+    reqheaders: { authorization: 'Bearer secret-token' },
+  })
+    .get('/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar')
+    .reply(200, 'Success');
+
+  const result = await download(
+    'org.apache.commons:commons-lang3:3.4',
+    tmpDir,
+    'https://private.example.com/maven2/',
+    null,
+    { headers: { Authorization: 'Bearer secret-token' } }
+  );
+  assert.equal(result, path.join(tmpDir, 'commons-lang3-3.4.jar'));
+  assert.equal(fs.readFileSync(result, 'utf8'), 'Success');
+});
+
+test('should abort when fetchOptions.signal is aborted', async () => {
+  await assert.rejects(
+    download('org.apache.commons:commons-lang3:3.4', tmpDir, null, null, {
+      signal: AbortSignal.abort(),
+    }),
+    { name: 'AbortError' }
+  );
+});
+
 test('should error if artifact does not exist', async () => {
   nock('https://repo1.maven.org/maven2/')
     .get('/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar')

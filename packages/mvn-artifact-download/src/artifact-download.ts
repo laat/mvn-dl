@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import { Readable } from 'node:stream';
 import { pipeline } from 'node:stream/promises';
+import type { ReadableStream } from 'node:stream/web';
 import path from 'node:path';
 import getFilename from 'mvn-artifact-filename';
 import parseName from 'mvn-artifact-name-parser';
@@ -15,7 +16,7 @@ export interface Artifact {
   isSnapShot?: boolean;
   snapShotVersion?: string;
 }
-export interface FetchOptions {
+export interface FetchOptions extends RequestInit {
   /**
    * request headers, e.g. `{ Authorization: "Bearer ..." }` for private registries
    */
@@ -51,7 +52,7 @@ export default async function download(
     throw new Error(`Empty response body for ${url}`);
   }
   await pipeline(
-    Readable.fromWeb(response.body as any),
+    Readable.fromWeb(response.body as ReadableStream<Uint8Array>),
     fs.createWriteStream(destFile)
   );
   return destFile;

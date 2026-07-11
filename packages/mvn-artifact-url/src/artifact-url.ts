@@ -43,10 +43,12 @@ async function latestSnapShotVersion(
     );
   }
   const body = await response.text();
-  const xml: any = await parseXmlString(body);
-  const snapshot = xml.metadata.versioning[0].snapshot[0];
-  const version = snapshot.timestamp[0] + '-' + snapshot.buildNumber[0];
-  return version;
+  const xml = parseXmlString(body);
+  const snapshot = xml?.metadata?.versioning?.snapshot;
+  if (!snapshot?.timestamp || !snapshot?.buildNumber) {
+    throw new Error(`Unable to parse snapshot version from ${metadataUrl}`);
+  }
+  return snapshot.timestamp + '-' + snapshot.buildNumber;
 }
 
 export default async function artifactUrl(

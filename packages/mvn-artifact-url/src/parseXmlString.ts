@@ -1,13 +1,9 @@
-import { parseString } from 'xml2js';
+import { XMLParser } from 'fast-xml-parser';
+
+// parseTagValue: false keeps values like <timestamp>20120607.154250</timestamp>
+// as strings; number coercion would drop trailing zeros.
+const parser = new XMLParser({ parseTagValue: false });
 
 export default function parseXmlString(body: string) {
-  return new Promise((resolve, reject) => {
-    parseString(body, (err, result) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(result);
-      }
-    });
-  });
+  return parser.parse(body);
 }

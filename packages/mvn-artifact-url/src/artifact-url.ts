@@ -11,7 +11,7 @@ export interface Artifact {
   snapShotVersion?: string;
 }
 
-export interface FetchOptions {
+export interface FetchOptions extends RequestInit {
   /**
    * request headers, e.g. `{ Authorization: "Bearer ..." }` for private registries
    */

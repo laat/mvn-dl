@@ -18,6 +18,30 @@ export interface FetchOptions extends RequestInit {
   headers?: HeadersInit;
 }
 
+function isPrivateOrLoopbackHost(hostname: string): boolean {
+  const ipv4 = hostname.match(/^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/);
+  if (ipv4) {
+    const [a, b] = ipv4.slice(1, 3).map(Number);
+    if (a === 0 || a === 10 || a === 127) return true;
+    if (a === 169 && b === 254) return true;
+    if (a === 172 && b >= 16 && b <= 31) return true;
+    if (a === 192 && b === 168) return true;
+  }
+  return hostname === 'localhost' || hostname === '::1';
+}
+
+function assertAllowedBasePath(basePath: string): void {
+  const { hostname, protocol } = new URL(basePath);
+  if (protocol !== 'http:' && protocol !== 'https:') {
+    throw new Error(`Unsupported protocol for repository url: ${protocol}`);
+  }
+  if (isPrivateOrLoopbackHost(hostname)) {
+    throw new Error(
+      `Refusing to fetch artifact from internal/private host: ${hostname}`
+    );
+  }
+}
+
 function groupPath(artifact: Artifact): string {
   return [
     artifact.groupId.replace(/\./g, '/'),
@@ -55,6 +79,7 @@ export default async function artifactUrl(
   fetchOptions: FetchOptions = {}
 ) {
   const prefix = basePath || 'https://repo1.maven.org/maven2/';
+  assertAllowedBasePath(prefix);
   if (artifact.isSnapShot) {
     const snapShotVersion = await latestSnapShotVersion(
       artifact,
